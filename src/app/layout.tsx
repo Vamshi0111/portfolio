@@ -1,24 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Jost } from "next/font/google";
-import { GeistSans } from 'geist/font/sans';
-import { GeistMono } from 'geist/font/mono';
 
 
 const jost = Jost({
   subsets: ["latin"],
   display: "swap",
-});
-
-const geistSans = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist-sans",
-});
-
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
 });
 
 export const metadata: Metadata = {
@@ -34,7 +21,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${jost.className}, ${geistSans.variable}, ${geistMono.variable}`}
+      className={`${jost.className}`}
     >
       <body>
         {children}

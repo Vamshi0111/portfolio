@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import emailjs from "emailjs-com";
 import LandscapeImg from '../../public/Landing.jpg';
 import Link from 'next/link';
@@ -33,7 +33,7 @@ function Page() {
 
   const [showButton, setShowButton] = useState(false);
   const [textIndex, setTextIndex] = useState(0);
-  const texts = ["I'm a Developer", "I'm a Designer", "I'm a Freelancer"];
+
   const [subIndex, setSubIndex] = useState(0);
   const [forward, setForward] = useState(true);
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -45,6 +45,9 @@ function Page() {
   });
   const [animateUnderline, setAnimateUnderline] = useState(false);
 
+  const texts = useMemo(() => {
+    return ["I'm a Developer", "I'm a Designer", "I'm a Freelancer"];
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,10 +66,10 @@ function Page() {
   };
 
   useEffect(() => {
-    const img = new (window as any).Image();
+    const img = new (window).Image();
     img.src = LandscapeImg.src;
     img.onload = () => setImageLoaded(true);
-  }, []);
+  }, [texts]);
 
   useEffect(() => {
     if (subIndex === texts[textIndex].length + 1 && forward) {
@@ -85,10 +88,9 @@ function Page() {
     }, forward ? 120 : 50);
 
     return () => clearTimeout(timeout);
-  }, [subIndex, forward, textIndex]);
+  }, [subIndex, forward, textIndex, texts]);
 
   const displayText = texts[textIndex].substring(0, subIndex);
-  const currentWord = texts[textIndex].split(" ")[3];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -107,13 +109,6 @@ function Page() {
       alert("Please enter a valid email address.");
       return;
     }
-
-    const templateParams = {
-      name: form.name,
-      email: form.email,
-      subject: form.subject,
-      message: form.message,
-    };
 
     emailjs.sendForm(
       "service_pbt0rw5",      // This is Actual EmailJS Service ID
@@ -151,7 +146,7 @@ function Page() {
 
   return (
     <div style={{ backgroundColor: '#0E1123' }} className={`flex h-auto w-full flex-col `}>
-      
+
       {showButton && (
         <div
           onClick={scrollToTop}
@@ -164,7 +159,7 @@ function Page() {
       {/* // navbar */}
       <nav className="flex w-full lg:h-15 items-center justify-center lg:gap-40 sticky top-0 z-50 shadow-lg bg-[#0E1123]">
         <div className="flex items-end h-full w-20 justify-center">
-          <img src='/Vv.png' alt="Logo" className="flex lg:h-15 lg:w-auto cursor-pointer" onClick={scrollToTop} />
+          <Image src='/Vv.png' alt="Logo" width={100} height={100} className="flex lg:h-15 lg:w-auto cursor-pointer" onClick={scrollToTop} />
         </div>
         <div className="flex lg:h-full items-center justify-between lg:w-[50%]">
           <p className={` text-white lg:text-lg lg:font-medium hover:text-red-400 transition-colors duration-200 cursor-pointer`} onClick={scrollToTop}>Home</p>
@@ -200,7 +195,7 @@ function Page() {
             <div className='lg:ml-22 lg:mt-5 w-[85%]'>
               <p className={` lg:font-bold lg:text-white lg:text-5xl`}>Software Developer</p>
               <p className={` lg:font-semibold lg:mt-3 lg:text-3xl text-[#6899E0]`}>& UI/UX Designer</p>
-              <p className={` lg:w-[100%] lg:mt-5 text-lg`}>I'm a Full-Stack Developer skilled in JavaScript, TypeScript, React, React Native, Node.js, Express, and MongoDB/PostgreSQL. I build responsive web apps with efficient APIs and robust database management.</p>
+              <p className={` lg:w-[100%] lg:mt-5 text-lg`}>I&apos;m a Full-Stack Developer skilled in JavaScript, TypeScript, React, React Native, Node.js, Express, and MongoDB/PostgreSQL. I build responsive web apps with efficient APIs and robust database management.</p>
             </div>
             <div className={` lg:text-[150px] font-semibold lg:ml-22 flex gap-10 `}>
               <p>Vamshi</p>
@@ -208,8 +203,8 @@ function Page() {
             </div>
           </div>
           {/* Image started*/}
-          <div className='bg-[#0E1123] rounded-xl ring-2 ring-transparent  lg:w-[40%] flex items-start justify-center'>
-            <img src="IMG_1.png" className='lg:mt-30' />
+          <div className='bg-[#0E1123] rounded-xl ring-2 ring-transparent lg:w-[40%] flex items-start justify-center'>
+            <Image src="IMG_1.png" alt="img_1" width={500} height={500} className='h-55 w-100 lg:h-[550px] lg:w-[500px] lg:mt-30' />
           </div>
           {/* Image ended */}
         </div>
@@ -232,7 +227,7 @@ function Page() {
             {/* Gen card */}
             <div className='flex items-center lg:w-[93%] gap-10 lg:mt-10 bg-yellow-00 lg:mr-44 lg:h-[200px] rounded-[20px] lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
               <div className='lg:w-[25%] bg-yellow-00 flex items-center justify-center'>
-                <img src="Gen.png" className='rounded-[20px] lg:h-[200px]' />
+                <Image src="Gen.png" alt="gen" width={100} height={100} className='rounded-[20px] lg:h-[200px]' />
               </div>
               <div className={` bg-green-00 lg:h-[80%] lg:w-[65%]`}>
                 <div className='flex items-center justify-between'>
@@ -258,9 +253,9 @@ function Page() {
             {/* Devrootz card */}
             <div className='flex items-center lg:w-[93%] gap-10 lg:mt-10 bg-yellow-00 lg:mr-44 lg:h-[200px] rounded-[20px] lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
               <div className='lg:w-[25%] bg-yellow-00 flex items-center justify-center'>
-                <img src="DevRootz.png" />
+                <Image src="DevRootz.png" alt="devrootz" width={100} height={100}/>
               </div>
-              <div className={` bg-green-00 lg:h-[80%] lg:w-[65%]`}>
+              <div className={`bg-green-00 lg:h-[80%] lg:w-[65%]`}>
                 <div className='flex items-center justify-between'>
                   <h1 className='font-bold text-2xl text-[#6899E0]'>DevRootz Hub.</h1>
                   <a href="https://devrootz.com/"
@@ -273,7 +268,7 @@ function Page() {
                     </div>
                   </a>
                 </div>
-                <p className='lg:mt-3'>Devrootz Hub equips you with cutting-edge tech skills and bridges the gap between learning and employment. Our expert-led training programs focus on the most in-demand technologies, ensuring you're job-ready. With hands-on learning and personalized placement support, we empower you to succeed in the competitive tech industry and land your dream role confidently.
+                <p className='lg:mt-3'>Devrootz Hub equips you with cutting-edge tech skills and bridges the gap between learning and employment. Our expert-led training programs focus on the most in-demand technologies, ensuring you&apos;re job-ready. With hands-on learning and personalized placement support, we empower you to succeed in the competitive tech industry and land your dream role confidently.
                 </p>
               </div>
             </div>
@@ -281,7 +276,7 @@ function Page() {
             {/* S4 Tech card */}
             <div className='flex items-center lg:w-[93%] gap-10 lg:mt-10 bg-yellow-00 lg:mr-44 lg:h-[200px] rounded-[20px] lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
               <div className='lg:w-[25%] bg-yellow-00 flex items-center justify-center'>
-                <img src="S4.png" className='rounded-[20px] lg:h-[140px]' />
+                <Image src="S4.png" alt="S4 img" width={100} height={100} className='rounded-[20px] lg:h-[140px]' />
               </div>
               <div className={` bg-green-00 lg:h-[80%] lg:w-[65%]`}>
                 <div className='flex items-center justify-between'>
@@ -306,7 +301,7 @@ function Page() {
             {/* Messenger card */}
             <div className='flex items-center lg:w-[93%] gap-10 lg:mt-10 bg-yellow-00 lg:mr-44 lg:h-[200px] rounded-[20px] lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
               <div className='lg:w-[25%] bg-yellow-00'>
-                <img src="Messenger.png" className='rounded-[20px]' />
+                <Image src="Messenger.png" alt="Messenger" width={100} height={100} className='rounded-[20px]' />
               </div>
               <div className={` bg-green-00 lg:h-[80%] lg:w-[65%]`}>
                 <h1 className='font-bold text-2xl text-[#6899E0]'>MessengerApp.</h1>
@@ -320,7 +315,7 @@ function Page() {
             {/* ShipEase card */}
             <div className='flex items-center lg:w-[93%] gap-10 lg:mt-10 bg-yellow-00 lg:mr-44 lg:h-[200px] rounded-[20px] lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
               <div className='lg:w-[25%] bg-yellow-00'>
-                <img src="ShipEase.png" className='rounded-[20px]' />
+                <Image src="ShipEase.png" alt="shipease" width={100} height={100} className='rounded-[20px]' />
               </div>
               <div className={` bg-green-00 lg:h-[80%] lg:w-[65%]`}>
                 <h1 className='font-bold text-2xl text-[#6899E0]'>ShipEase.</h1>
@@ -448,7 +443,7 @@ function Page() {
                   <div className='bg-red-00 w-[80%]'>
                     <h4 className='text-[#6899E0] text-lg font-semibold'>Have a project in mind?</h4>
                     <div className='flex items-end justify-between'>
-                      <h2 className='text-4xl font-semibold lg:mt-2'>Let's Connect..</h2>
+                      <h2 className='text-4xl font-semibold lg:mt-2'>Let&apos;s Connect..</h2>
                       <a href="https://wa.me/918523035382" target='_blank'><div className='flex rounded-full items-center justify-center lg:h-9 lg:w-9 group hover:bg-red-400 bg-[#F7FBFD] transition-transform hover:-translate-y-1'>
                         <FaWhatsapp className='text-[#5E77B1] group-hover:text-white' size={20} />
                       </div></a>
@@ -456,7 +451,7 @@ function Page() {
                     <form onSubmit={sendEmail} className='lg:mt-3 flex flex-col lg:w-[100%] bg-red-00'>
                       <div className='lg:w-full flex justify-between lg:h-[50px]'>
                         <input
-                          type="text"
+                          type='text'
                           name='name'
                           placeholder='Your Name'
                           value={form.name}
@@ -516,7 +511,7 @@ function Page() {
       {/* Footer */}
       <div className='lg:h-[60px] bg-[#1C2148] lg:mt-15 flex items-center justify-center'>
         <div className='rounded-full lg:h-16 lg:w-16 bg-gradient-to-r from-[#6A97E3] to-white flex items-center justify-center relative z-50 lg:bottom-7.5 lg:-left-97'>
-          <img src="Vv.png" alt="" className='lg:w-[50px]' />
+          <Image src="Vv.png" alt="Vv" width={100} height={100} className='lg:w-[50px]' />
         </div>
         <LiaCopyrightSolid />
         <p className='lg:ml-1'>2025 Vamshi. All Rights Reserved.</p>
