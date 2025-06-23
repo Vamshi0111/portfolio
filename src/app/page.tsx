@@ -1,5 +1,4 @@
 "use client";
-import { Jost } from 'next/font/google';
 import { FaLinkedinIn, FaWhatsapp, FaCaretRight, FaReact, FaFigma, FaAws, FaArrowUp, FaSkype, FaInstagram, FaFacebook } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { DiNodejs } from "react-icons/di";
@@ -29,13 +28,6 @@ const skillCards = [
   { icon: <FaAws className='text-9xl' />, name: 'AWS' },
   { icon: <SiMongodb className='text-9xl' />, name: 'MongoDB' },
 ];
-
-export const jost = Jost({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-jost',
-  display: 'swap',
-});
 
 function Page() {
 
@@ -158,8 +150,8 @@ function Page() {
 
 
   return (
-    <div style={{ backgroundColor: '#0E1123' }} className={`flex h-auto w-full flex-col ${jost.className}`}>
-
+    <div style={{ backgroundColor: '#0E1123' }} className={`flex h-auto w-full flex-col `}>
+      
       {showButton && (
         <div
           onClick={scrollToTop}
@@ -172,18 +164,18 @@ function Page() {
       {/* // navbar */}
       <nav className="flex w-full lg:h-15 items-center justify-center lg:gap-40 sticky top-0 z-50 shadow-lg bg-[#0E1123]">
         <div className="flex items-end h-full w-20 justify-center">
-          <img src='/Vv.png' alt="Logo" className="flex lg:h-15 lg:w-auto cursor-pointer" onClick={scrollToTop}/>
+          <img src='/Vv.png' alt="Logo" className="flex lg:h-15 lg:w-auto cursor-pointer" onClick={scrollToTop} />
         </div>
         <div className="flex lg:h-full items-center justify-between lg:w-[50%]">
-          <p className={`${jost.className} text-white lg:text-lg lg:font-medium hover:text-red-400 transition-colors duration-200 cursor-pointer`} onClick={scrollToTop}>Home</p>
-          <Link href='#about-section'><p className={`${jost.className} text-white lg:text-lg lg:font-medium hover:text-red-400 transition-colors duration-200`}>About me</p></Link>
-          <Link href='#projects-section'><p className={`${jost.className} text-white lg:text-lg lg:font-medium hover:text-red-400 transition-colors duration-200`}>Projects</p></Link>
-          <Link href='#skills-section'><p className={`${jost.className} text-white lg:text-lg lg:font-medium hover:text-red-400 transition-colors duration-200`}>Skills</p></Link>
-          <Link href='#experience-section'><p className={`${jost.className} text-white lg:text-lg lg:font-medium hover:text-red-400 transition-colors duration-200`}>Experience</p></Link>
-          <Link href='#education-section'><p className={`${jost.className} text-white lg:text-lg lg:font-medium hover:text-red-400 transition-colors duration-200`}>Education</p></Link>
+          <p className={` text-white lg:text-lg lg:font-medium hover:text-red-400 transition-colors duration-200 cursor-pointer`} onClick={scrollToTop}>Home</p>
+          <Link href='#about-section'><p className={` text-white lg:text-lg lg:font-medium hover:text-red-400 transition-colors duration-200`}>About me</p></Link>
+          <Link href='#projects-section'><p className={` text-white lg:text-lg lg:font-medium hover:text-red-400 transition-colors duration-200`}>Projects</p></Link>
+          <Link href='#skills-section'><p className={` text-white lg:text-lg lg:font-medium hover:text-red-400 transition-colors duration-200`}>Skills</p></Link>
+          <Link href='#experience-section'><p className={` text-white lg:text-lg lg:font-medium hover:text-red-400 transition-colors duration-200`}>Experience</p></Link>
+          <Link href='#education-section'><p className={` text-white lg:text-lg lg:font-medium hover:text-red-400 transition-colors duration-200`}>Education</p></Link>
         </div>
         <div className='lg:w-20 rounded-full lg:h-10 flex justify-center items-center bg-[#5E7CB2] transition-transform hover:-translate-y-1 hover:bg-red-400'>
-          <Link href='#contact-section'><p className={`${jost.className} text-white lg:text-md lg:font-medium`}>Contact</p></Link>
+          <Link href='#contact-section'><p className={` text-white lg:text-md lg:font-medium`}>Contact</p></Link>
         </div>
       </nav>
 
@@ -206,11 +198,11 @@ function Page() {
             </div>
             {/* Icons ended Li, git */}
             <div className='lg:ml-22 lg:mt-5 w-[85%]'>
-              <p className={`${jost.className} lg:font-bold lg:text-white lg:text-5xl`}>Software Developer</p>
-              <p className={`${jost.className} lg:font-semibold lg:mt-3 lg:text-3xl text-[#6899E0]`}>& UI/UX Designer</p>
-              <p className={`${jost.className} lg:w-[100%] lg:mt-5 text-lg`}>I'm a Full-Stack Developer skilled in JavaScript, TypeScript, React, React Native, Node.js, Express, and MongoDB/PostgreSQL. I build responsive web apps with efficient APIs and robust database management.</p>
+              <p className={` lg:font-bold lg:text-white lg:text-5xl`}>Software Developer</p>
+              <p className={` lg:font-semibold lg:mt-3 lg:text-3xl text-[#6899E0]`}>& UI/UX Designer</p>
+              <p className={` lg:w-[100%] lg:mt-5 text-lg`}>I'm a Full-Stack Developer skilled in JavaScript, TypeScript, React, React Native, Node.js, Express, and MongoDB/PostgreSQL. I build responsive web apps with efficient APIs and robust database management.</p>
             </div>
-            <div className={` lg:text-[150px] font-semibold lg:ml-22 flex gap-10 ${jost.className}`}>
+            <div className={` lg:text-[150px] font-semibold lg:ml-22 flex gap-10 `}>
               <p>Vamshi</p>
               <p className='text-[#DFAFAF] bg-clip-text relative bg-gradient-to-r from-[#EF7979] to-white text-transparent'>Vadla</p>
             </div>
@@ -223,16 +215,16 @@ function Page() {
         </div>
         {/* Landing ends */}
         <div className='bg-red-00 flex lg:w-full'>
-          <div id='about-section' className={`${jost.className} flex flex-col lg:w-[30%] bg-yellow-00 lg:ml-22 lg:scroll-mt-[80px]`}>
+          <div id='about-section' className={` flex flex-col lg:w-[30%] bg-yellow-00 lg:ml-22 lg:scroll-mt-[80px]`}>
             <h4 className='lg:font-semibold lg:text-2xl text-[#6899E0]'>More</h4>
             <h2 className='text-white lg:font-semibold lg:text-4xl lg:mt-3'>About me</h2>
           </div>
           <div className='bg-green-00 w-full text-lg lg:mr-19'>
-            <p className={`${jost.className}`}>As a Full-Stack Developer, I specialize in JavaScript, TypeScript, React, Nextjs, React-Native, Node.js, Express.js, and MongoDB/PostgreSQL. I design and develop responsive web applications, ensuring efficient API integrations and database management to deliver high-performance solutions.</p>
+            <p className={``}>As a Full-Stack Developer, I specialize in JavaScript, TypeScript, React, Nextjs, React-Native, Node.js, Express.js, and MongoDB/PostgreSQL. I design and develop responsive web applications, ensuring efficient API integrations and database management to deliver high-performance solutions.</p>
           </div>
         </div>
         <div className='lg:w-full flex justify-center'>
-          <div id='projects-section' className={`bg-green-00 flex flex-col lg:w-full ${jost.className} lg:pl-22 lg:mt-10`}>
+          <div id='projects-section' className={`bg-green-00 flex flex-col lg:w-full  lg:pl-22 lg:mt-10`}>
             <div className='bg-yellow-00 lg:w-full lg:mt-25'>
               <h4 className='lg:font-semibold lg:text-2xl text-[#6899E0]'>My Last</h4>
               <h2 className='text-white lg:font-semibold lg:text-4xl lg:mt-3'>Projects</h2>
@@ -242,7 +234,7 @@ function Page() {
               <div className='lg:w-[25%] bg-yellow-00 flex items-center justify-center'>
                 <img src="Gen.png" className='rounded-[20px] lg:h-[200px]' />
               </div>
-              <div className={`${jost.className} bg-green-00 lg:h-[80%] lg:w-[65%]`}>
+              <div className={` bg-green-00 lg:h-[80%] lg:w-[65%]`}>
                 <div className='flex items-center justify-between'>
                   <h1 className='font-bold text-2xl text-[#6899E0]'>Genamplify Solutions Hub Pvt Ltd.</h1>
                   <a href="https://genamplifysol.com/"
@@ -268,7 +260,7 @@ function Page() {
               <div className='lg:w-[25%] bg-yellow-00 flex items-center justify-center'>
                 <img src="DevRootz.png" />
               </div>
-              <div className={`${jost.className} bg-green-00 lg:h-[80%] lg:w-[65%]`}>
+              <div className={` bg-green-00 lg:h-[80%] lg:w-[65%]`}>
                 <div className='flex items-center justify-between'>
                   <h1 className='font-bold text-2xl text-[#6899E0]'>DevRootz Hub.</h1>
                   <a href="https://devrootz.com/"
@@ -291,7 +283,7 @@ function Page() {
               <div className='lg:w-[25%] bg-yellow-00 flex items-center justify-center'>
                 <img src="S4.png" className='rounded-[20px] lg:h-[140px]' />
               </div>
-              <div className={`${jost.className} bg-green-00 lg:h-[80%] lg:w-[65%]`}>
+              <div className={` bg-green-00 lg:h-[80%] lg:w-[65%]`}>
                 <div className='flex items-center justify-between'>
                   <h1 className='font-bold text-2xl text-[#6899E0]'>S4 Tech.</h1>
                   <a href="https://s4tech.io/"
@@ -316,7 +308,7 @@ function Page() {
               <div className='lg:w-[25%] bg-yellow-00'>
                 <img src="Messenger.png" className='rounded-[20px]' />
               </div>
-              <div className={`${jost.className} bg-green-00 lg:h-[80%] lg:w-[65%]`}>
+              <div className={` bg-green-00 lg:h-[80%] lg:w-[65%]`}>
                 <h1 className='font-bold text-2xl text-[#6899E0]'>MessengerApp.</h1>
                 <p className='lg:mt-3'>MessengerApp is a real-time cross-platform messaging application developed using React for web and React Native for mobile.
                   Key features include instant messaging, media sharing, and secure user authentication.
@@ -330,7 +322,7 @@ function Page() {
               <div className='lg:w-[25%] bg-yellow-00'>
                 <img src="ShipEase.png" className='rounded-[20px]' />
               </div>
-              <div className={`${jost.className} bg-green-00 lg:h-[80%] lg:w-[65%]`}>
+              <div className={` bg-green-00 lg:h-[80%] lg:w-[65%]`}>
                 <h1 className='font-bold text-2xl text-[#6899E0]'>ShipEase.</h1>
                 <p className='lg:mt-3'>ShipEase is a transport logistics app built with React (web) and React Native (mobile).
                   It features vehicle selection, booking, real-time tracking, and fare estimation.
@@ -374,7 +366,7 @@ function Page() {
               <div className='lg:h-[200px] bg-red-00 lg:mt-5 flex'>
                 <div className='relative bg-yellow-00 lg:w-[25%] border-r-2 border-[#7F95CF] flex items-center justify-center'>
                   <h3 className='font-bold lg:text-xl'>Dec 2023 - Jan 2025 <br /><p className='mt-3 text-end'>Fulltime</p></h3>
-                  <div className='rounded-full border-2 border-[#7F95CF] h-7 w-7 absolute flex justify-center items-center -mr-[15.5px] right-0 top-center font-bold text-lg shadow-lg'>
+                  <div className='rounded-full border-2 border-[#7F95CF] h-7 w-7 absolute flex justify-center items-center -mr-[15px] right-0 top-center font-bold text-lg shadow-lg'>
                     <div className='rounded-full bg-white h-4 w-4' />
                   </div>
                 </div>
@@ -386,7 +378,7 @@ function Page() {
               <div className='lg:h-[200px] bg-red-00 flex'>
                 <div className='relative bg-yellow-00 lg:w-[25%] border-r-2 border-[#7F95CF] flex items-center justify-center'>
                   <h3 className='font-bold lg:text-xl'>Jan 2025 - Apr 2025 <br /><p className='mt-3 text-end'>Intern</p></h3>
-                  <div className='rounded-full border-2 border-[#7F95CF] h-7 w-7 absolute flex justify-center items-center -mr-[15.5px] right-0 top-center font-bold text-lg shadow-lg'>
+                  <div className='rounded-full border-2 border-[#7F95CF] h-7 w-7 absolute flex justify-center items-center -mr-[15px] right-0 top-center font-bold text-lg shadow-lg'>
                     <div className='rounded-full bg-white h-4 w-4' />
                   </div>
                 </div>
@@ -404,7 +396,7 @@ function Page() {
               <div className='lg:h-[200px] bg-red-00 lg:mt-5 flex'>
                 <div className='relative bg-yellow-00 lg:w-[25%] border-r-2 border-[#7F95CF] flex items-center justify-center'>
                   <h3 className='font-bold lg:text-xl'>Oct 2020 - Nov 2023</h3>
-                  <div className='rounded-full border-2 border-[#7F95CF] h-7 w-7 absolute flex justify-center items-center -mr-[15.5px] right-0 top-center font-bold text-lg shadow-lg'>
+                  <div className='rounded-full border-2 border-[#7F95CF] h-7 w-7 absolute flex justify-center items-center -mr-[15px] right-0 top-center font-bold text-lg shadow-lg'>
                     <div className='rounded-full bg-white h-4 w-4' />
                   </div>
                 </div>
@@ -416,7 +408,7 @@ function Page() {
               <div className='lg:h-[200px] bg-red-00 flex'>
                 <div className='relative bg-yellow-00 lg:w-[25%] border-r-2 border-[#7F95CF] flex items-center justify-center'>
                   <h3 className='font-bold lg:text-xl'>Jun 2017 - Jun 2020</h3>
-                  <div className='rounded-full border-2 border-[#7F95CF] h-7 w-7 absolute flex justify-center items-center -mr-[15.5px] right-0 top-center font-bold text-lg shadow-lg'>
+                  <div className='rounded-full border-2 border-[#7F95CF] h-7 w-7 absolute flex justify-center items-center -mr-[15px] right-0 top-center font-bold text-lg shadow-lg'>
                     <div className='rounded-full bg-white h-4 w-4' />
                   </div>
                 </div>
@@ -441,12 +433,12 @@ function Page() {
                         className={`object-cover transition-opacity duration-1000 ${imageLoaded ? 'opacity-100' : 'opacity-0'
                           }`}
                         priority
-                        onLoadingComplete={() => setImageLoaded(true)}
+                        onLoad={() => setImageLoaded(true)}
                       />
                       <p className='absolute font-bold text-white lg:bottom-40 lg:ml-4 text-3xl'>Vamshi Vadla</p>
                     </div>
                     <div className={`relative z-10 text-white text-center lg:ml-4 lg:mt-40 font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-2xl scrolling-underline ${animateUnderline ? 'animate-underline' : ''}`}
-                      style={{ fontFamily: 'var(--font-jost)' }}
+                      style={{ fontFamily: 'var(--)' }}
                     >
                       {displayText}
                     </div>
