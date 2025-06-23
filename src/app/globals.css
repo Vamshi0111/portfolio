@@ -24,3 +24,23 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.text-outline-white {
+  color: transparent;
+  -webkit-text-stroke: 1.5px white;
+}
+.scrolling-underline::after {
+  content: '';
+  position: absolute;
+  left: 60;
+  bottom: 0;
+  width: 70%;
+  height: 2px;
+  background-color: #6899E0 !important;
+  transform: scaleX(1) !important; 
+  transition: none !important; 
+  z-index: 9999 !important; 
+}
+html {
+  scroll-behavior: smooth; /* Add this line */
+}
