@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,  
-  "homepage": "https://Vamshi0111.github.io/portfolio",
+  "homepage": "https://vamshi0111.github.io/portfolio",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
