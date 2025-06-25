@@ -10,10 +10,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { useEffect, useState, useMemo } from 'react';
 import emailjs from "emailjs-com";
-import LandscapeImg from '../../public/Landing.jpg';
 import Link from 'next/link';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
 import { LiaCopyrightSolid } from 'react-icons/lia';
 
 const skillCards = [
@@ -36,14 +33,12 @@ function Page() {
 
   const [subIndex, setSubIndex] = useState(0);
   const [forward, setForward] = useState(true);
-  const [imageLoaded, setImageLoaded] = useState(false);
   const [form, setForm] = useState({
     name: '',
     email: '',
     subject: '',
     message: ''
   });
-  const [animateUnderline, setAnimateUnderline] = useState(false);
 
   const texts = useMemo(() => {
     return ["I'm a Developer", "I'm a Designer", "I'm a Freelancer"];
@@ -53,7 +48,6 @@ function Page() {
     const handleScroll = () => {
       setShowButton(window.scrollY > 300);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -64,12 +58,6 @@ function Page() {
       behavior: "smooth",
     });
   };
-
-  useEffect(() => {
-    const img = new (window).Image();
-    img.src = LandscapeImg.src;
-    img.onload = () => setImageLoaded(true);
-  }, [texts]);
 
   useEffect(() => {
     if (subIndex === texts[textIndex].length + 1 && forward) {
@@ -89,8 +77,6 @@ function Page() {
 
     return () => clearTimeout(timeout);
   }, [subIndex, forward, textIndex, texts]);
-
-  const displayText = texts[textIndex].substring(0, subIndex);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -128,21 +114,6 @@ function Page() {
     setForm({ name: '', email: '', subject: '', message: '' });
   };
 
-  useEffect(() => {
-    const imageLoadTimer = setTimeout(() => {
-      setImageLoaded(true);
-    }, 100);
-
-    const underlineTimer = setTimeout(() => {
-      setAnimateUnderline(true);
-    }, 300);
-
-    return () => {
-      clearTimeout(imageLoadTimer);
-      clearTimeout(underlineTimer);
-    };
-  }, []);
-
 
   return (
     <div style={{ backgroundColor: '#0E1123' }} className={`flex h-auto w-full flex-col `}>
@@ -159,10 +130,10 @@ function Page() {
       {/* // navbar */}
       <nav className="flex w-full lg:h-15 items-center justify-center lg:gap-40 sticky top-0 z-50 shadow-lg bg-[#0E1123]">
         <div className="flex items-end h-full w-20 justify-center">
-          <Image src='/Vv.png' alt="Logo" width={100} height={100} className="flex lg:h-15 lg:w-auto cursor-pointer" onClick={scrollToTop} />
+          <img src='/Vv.png' alt="Logo" className="flex lg:h-15 lg:w-auto cursor-pointer" onClick={scrollToTop} />
         </div>
         <div className="flex lg:h-full items-center justify-between lg:w-[50%]">
-          <p className={` text-white lg:text-lg lg:font-medium hover:text-red-400 transition-colors duration-200 cursor-pointer`} onClick={scrollToTop}>Home</p>
+          <p className={`text-white lg:text-lg lg:font-medium hover:text-red-400 transition-colors duration-200 cursor-pointer`} onClick={scrollToTop}>Home</p>
           <Link href='#about-section'><p className={` text-white lg:text-lg lg:font-medium hover:text-red-400 transition-colors duration-200`}>About me</p></Link>
           <Link href='#projects-section'><p className={` text-white lg:text-lg lg:font-medium hover:text-red-400 transition-colors duration-200`}>Projects</p></Link>
           <Link href='#skills-section'><p className={` text-white lg:text-lg lg:font-medium hover:text-red-400 transition-colors duration-200`}>Skills</p></Link>
@@ -204,7 +175,7 @@ function Page() {
           </div>
           {/* Image started*/}
           <div className='bg-[#0E1123] rounded-xl ring-2 ring-transparent lg:w-[40%] flex items-start justify-center'>
-            <Image src="IMG_1.png" alt="img_1" width={500} height={500} className='h-55 w-100 lg:h-[550px] lg:w-[500px] lg:mt-30' />
+            <img src="/IMG_1.png" alt="img_1" className='h-55 w-100 lg:h-[550px] lg:w-[500px] lg:mt-30' />
           </div>
           {/* Image ended */}
         </div>
@@ -227,7 +198,7 @@ function Page() {
             {/* Gen card */}
             <div className='flex items-center lg:w-[93%] gap-10 lg:mt-10 bg-yellow-00 lg:mr-44 lg:h-[200px] rounded-[20px] lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
               <div className='lg:w-[25%] bg-yellow-00 flex items-center justify-center'>
-                <Image src="Gen.png" alt="gen" width={100} height={100} className='rounded-[20px] lg:h-[200px]' />
+                <img src="/Gen.png" alt="gen" className='rounded-[20px] lg:h-[200px]' />
               </div>
               <div className={` bg-green-00 lg:h-[80%] lg:w-[65%]`}>
                 <div className='flex items-center justify-between'>
@@ -253,7 +224,7 @@ function Page() {
             {/* Devrootz card */}
             <div className='flex items-center lg:w-[93%] gap-10 lg:mt-10 bg-yellow-00 lg:mr-44 lg:h-[200px] rounded-[20px] lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
               <div className='lg:w-[25%] bg-yellow-00 flex items-center justify-center'>
-                <Image src="DevRootz.png" alt="devrootz" width={100} height={100}/>
+                <img src="/DevRootz.png" alt="devrootz" />
               </div>
               <div className={`bg-green-00 lg:h-[80%] lg:w-[65%]`}>
                 <div className='flex items-center justify-between'>
@@ -276,7 +247,7 @@ function Page() {
             {/* S4 Tech card */}
             <div className='flex items-center lg:w-[93%] gap-10 lg:mt-10 bg-yellow-00 lg:mr-44 lg:h-[200px] rounded-[20px] lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
               <div className='lg:w-[25%] bg-yellow-00 flex items-center justify-center'>
-                <Image src="S4.png" alt="S4 img" width={100} height={100} className='rounded-[20px] lg:h-[140px]' />
+                <img src="/S4.png" alt="S4 img" className='rounded-[20px] lg:h-[140px]' />
               </div>
               <div className={` bg-green-00 lg:h-[80%] lg:w-[65%]`}>
                 <div className='flex items-center justify-between'>
@@ -301,7 +272,7 @@ function Page() {
             {/* Messenger card */}
             <div className='flex items-center lg:w-[93%] gap-10 lg:mt-10 bg-yellow-00 lg:mr-44 lg:h-[200px] rounded-[20px] lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
               <div className='lg:w-[25%] bg-yellow-00'>
-                <Image src="Messenger.png" alt="Messenger" width={100} height={100} className='rounded-[20px]' />
+                <img src="/Messenger.png" alt="Messenger" className='rounded-[20px]' />
               </div>
               <div className={` bg-green-00 lg:h-[80%] lg:w-[65%]`}>
                 <h1 className='font-bold text-2xl text-[#6899E0]'>MessengerApp.</h1>
@@ -315,7 +286,7 @@ function Page() {
             {/* ShipEase card */}
             <div className='flex items-center lg:w-[93%] gap-10 lg:mt-10 bg-yellow-00 lg:mr-44 lg:h-[200px] rounded-[20px] lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
               <div className='lg:w-[25%] bg-yellow-00'>
-                <Image src="ShipEase.png" alt="shipease" width={100} height={100} className='rounded-[20px]' />
+                <img src="/ShipEase.png" alt="shipease" className='rounded-[20px]' />
               </div>
               <div className={` bg-green-00 lg:h-[80%] lg:w-[65%]`}>
                 <h1 className='font-bold text-2xl text-[#6899E0]'>ShipEase.</h1>
@@ -416,28 +387,8 @@ function Page() {
               {/* Contact card */}
               <div id='contact-section' className='flex items-start lg:w-full bg-pink-00 lg:h-[435px] lg:mt-15 lg:rounded-lg'>
                 <div className='bg-red-00 lg:w-[50%] lg:h-full rounded-l-lg'>
-                  <motion.div className="relative h-full w-full overflow-hidden flex items-center justify-start rounded-l-lg"
-                    initial={{ opacity: 0, x: 100 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5 }}>
-                    <div className="absolute inset-0 z-0 flex flex-col">
-                      <Image
-                        src={LandscapeImg}
-                        alt="Background"
-                        fill
-                        className={`object-cover transition-opacity duration-1000 ${imageLoaded ? 'opacity-100' : 'opacity-0'
-                          }`}
-                        priority
-                        onLoad={() => setImageLoaded(true)}
-                      />
-                      <p className='absolute font-bold text-white lg:bottom-40 lg:ml-4 text-3xl'>Vamshi Vadla</p>
-                    </div>
-                    <div className={`relative z-10 text-white text-center lg:ml-4 lg:mt-40 font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-2xl scrolling-underline ${animateUnderline ? 'animate-underline' : ''}`}
-                      style={{ fontFamily: 'var(--)' }}
-                    >
-                      {displayText}
-                    </div>
-                  </motion.div>
+                  <img src="/Landing.jpg" alt="Landing" />
+                  <h3 className="relative z-50 bottom-25 left-4 font-bold lg:text-3xl">Vamshi Vadla</h3>
                 </div>
                 <div className='lg:w-[50%] lg:h-full bg-[#1C2148] p-5 rounded-r-lg flex justify-center'>
                   <div className='bg-red-00 w-[80%]'>
@@ -511,10 +462,10 @@ function Page() {
       {/* Footer */}
       <div className='lg:h-[60px] bg-[#1C2148] lg:mt-15 flex items-center justify-center'>
         <div className='rounded-full lg:h-16 lg:w-16 bg-gradient-to-r from-[#6A97E3] to-white flex items-center justify-center relative z-50 lg:bottom-7.5 lg:-left-97'>
-          <Image src="Vv.png" alt="Vv" width={100} height={100} className='lg:w-[50px]' />
+          <img src="/Vv.png" alt="Vv" className='lg:w-[50px]' />
         </div>
         <LiaCopyrightSolid />
-        <p className='lg:ml-1'>2025 Vamshi. All Rights Reserved.</p>
+        <p className='lg:ml-1'>2025 Vamshi. All rights reserved.</p>
       </div>
       {/* Footer */}
     </div>
