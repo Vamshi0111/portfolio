@@ -2,13 +2,14 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://vamshi0111.github.io/portfolio",
+  "homepage": "https://Vamshi0111.github.io/portfolio",
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build && next export",
+    "dev": "next dev",
+    "build": "set NODE_ENV=production&& next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "npm run build && gh-pages -d out"
+    "predeploy": "npm run build && echo > out/.nojekyll",
+    "deploy": "next build && npx gh-pages -d out"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -17,6 +18,7 @@
     "embla-carousel-react": "^8.6.0",
     "framer-motion": "^12.18.1",
     "geist": "^1.4.2",
+    "init": "^0.1.2",
     "next": "15.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -30,10 +32,13 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.21",
+    "cross-env": "^7.0.3",
     "eslint": "^9",
     "eslint-config-next": "15.3.4",
     "gh-pages": "^6.3.0",
-    "tailwindcss": "^4",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11",
     "typescript": "^5"
   }
 }

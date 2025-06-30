@@ -27,13 +27,14 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family:'Jost', Arial, Helvetica, sans-serif;
+  font-family: 'Jost', Arial, Helvetica, sans-serif;
 }
 
 .text-outline-white {
   color: transparent;
   -webkit-text-stroke: 1.5px white;
 }
+
 .scrolling-underline::after {
   content: '';
   position: absolute;
@@ -42,10 +43,66 @@ body {
   width: 70%;
   height: 2px;
   background-color: #6899E0 !important;
-  transform: scaleX(1) !important; 
-  transition: none !important; 
-  z-index: 9999 !important; 
+  transform: scaleX(1) !important;
+  transition: none !important;
+  z-index: 9999 !important;
 }
+
 html {
   scroll-behavior: smooth;
+}
+
+/* Base (XS screens) */
+.swiper-button-prev,
+.swiper-button-next {
+  width: 2rem;
+  height: 2rem;
+}
+
+.swiper {
+  --swiper-navigation-size: 1.25rem;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 1.25rem;
+  color: #007AFF;
+}
+
+/* Small screens (sm:) */
+@media (min-width: 640px) {
+
+  .swiper {
+    --swiper-navigation-size: 3.25rem;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 1.5rem;
+  }
+}
+
+/* Large screens (lg:) */
+@media (min-width: 1024px) {
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .swiper {
+    --swiper-navigation-size: 4rem;
+  }
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 2rem;
+  }
 }
