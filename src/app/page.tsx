@@ -152,7 +152,7 @@ function Page() {
         <div className='lg:w-full bg-red-00 flex'>
           <div className='w-full h-full sm:w-[60%] lg:w-[60%] bg-yellow-00'>
             {/* Icons started Linkedin, Github, Whatsapp */}
-            <div className='bg-green-00 w-[30%] h-[13%] sm:w-[36%] lg:w-[17%] mt-6 sm:mt-10 flex items-center justify-between lg:ml-22 lg:mt-30'>
+            <div className='bg-green-00 w-[48%] h-[13%] sm:w-[36%] lg:w-[17%] mt-6 sm:mt-10 flex items-center justify-between lg:ml-22 lg:mt-30'>
               <a href="https://www.linkedin.com/in/vamshi-vadla/" target='_blank'><div className='flex rounded-full h-7 w-7 sm:h-9 sm:w-9 lg:w-9 lg:h-9 items-center justify-center group transition-colors duration-200 hover:bg-red-400 bg-[#F7FBFD] transition-transform hover:-translate-y-1' >
                 <FaLinkedinIn className='text-[#5E77B1] group-hover:text-white h-4 sm:h-20 lg:h-20' size={20} />
               </div></a>
@@ -164,19 +164,19 @@ function Page() {
               </div></a>
             </div>
             {/* Icons ended Li, git */}
-            <div className='lg:ml-22 lg:mt-5 bg-red-00 lg:w-[85%]'>
+            <div className='lg:ml-22 lg:mt-5 bg-yellow-00 lg:w-[85%]'>
               <p className={`font-semibold sm:font-semibold sm:text-2xl mt-3 lg:mt-0 sm:mt-3 lg:font-bold lg:text-white lg:text-5xl`}>Software Developer</p>
               <p className={`font-semibold sm:font-semibold sm:text-lg lg:font-semibold lg:mt-3 lg:text-3xl text-[#6899E0]`}>& UI/UX Designer</p>
               <p className={`text-xs sm:text-lg lg:w-[100%] mt-2 sm:mt-3 lg:mt-5 text-lg`}>I&apos;m a Full-Stack Developer skilled in JavaScript, TypeScript, React, React Native, Node.js, and MongoDB/PostgreSQL. I build responsive web apps with efficient APIs and robust database management.</p>
             </div>
-            <div className={`hidden lg:flex sm:flex flex sm:text-[60px] lg:text-[150px] font-semibold lg:ml-22 sm:gap-4 lg:gap-10 `}>
+            <div className={`hidden lg:flex sm:flex flex sm:text-[65px] bg-green-00 absolute z-10 lg:text-[150px] font-semibold lg:ml-22 sm:gap-4 lg:gap-10 `}>
               <p>Vamshi</p>
               <p className='text-[#DFAFAF] bg-clip-text relative bg-gradient-to-r from-[#EF7979] to-white text-transparent'>Vadla</p>
             </div>
           </div>
           {/* Image started*/}
-          <div className='hidden lg:flex sm:flex bg-[#0E1123] rounded-xl ring-2 ring-transparent lg:w-[40%] flex items-start justify-center'>
-            <img src={`${IMAGE_BASE_PATH}/IMG_1.png`} alt="img_1" className='sm:h-[400px] sm:w-[450px] lg:h-[550px] lg:w-[500px] lg:mt-30' />
+          <div className='flex bg-red-00 lg:flex sm:flex bg-[#0E1123] rounded-xl ring-2 relative z-0 right-0 top-10 sm:static sm:right-0 sm:top-0 ring-transparent w-[70%] h-[10%] sm:h-auto sm:w-[60%] lg:w-[40%] lg:h-auto flex items-start justify-center'>
+            <img src={`${IMAGE_BASE_PATH}/IMG_1.png`} alt="img_1" className='h-full w-full sm:h-[400px] sm:w-[430px] lg:h-[550px] lg:w-[500px] lg:mt-30' />
           </div>
           {/* Image ended */}
         </div>
@@ -190,9 +190,9 @@ function Page() {
             <p className={`text-xs sm:text-sm lg:text-lg`}>As a Full-Stack Developer, I specialize in JavaScript, TypeScript, React, Nextjs, React-Native, Node.js, Express.js, and MongoDB/PostgreSQL. I design and develop responsive web applications, ensuring efficient API integrations and database management to deliver high-performance solutions.</p>
           </div>
         </div>
-        <div className='lg:w-full bg-green-00 flex justify-center mt-2 lg:mt-0 sm:mt-5'>
-          <div id='projects-section' className={`bg-violet-00 flex flex-col sm:mt-5 mt-2 lg:w-full lg:pl-22 lg:mt-10 overflow-hidden`}>
-            <div className='bg-pink-00 w-full lg:w-[93%] lg:mt-25'>
+        <div className='lg:w-full bg-green-00 flex justify-center lg:mt-0 sm:mt-5'>
+          <div className={`bg-violet-00 flex flex-col sm:mt-5 mt-4 lg:w-full lg:pl-22 lg:mt-10 overflow-hidden`}>
+            <div id='projects-section' className='bg-pink-00 w-full lg:w-[93%] lg:mt-25 mt-0 sm:scroll-mt-11 lg:scroll-mt-20'>
               <h4 className='lg:font-semibold lg:text-2xl font-bold text-sm text-[#6899E0]'>My Last</h4>
               <h2 className='text-white sm:text-lg font-bold lg:font-semibold lg:text-4xl lg:mt-3'>Projects</h2>
             </div>
@@ -304,8 +304,8 @@ function Page() {
               </div>
             </div>
             {/* ShipEase card */}
-            <div id='skills-section' className='bg-yellow-00 lg:w-[93%] overflow-hidden'>
-              <div className={`flex flex-col lg:w-[30%] bg-yellow-00 mt-10 sm:mt-10 lg:w-full lg:mt-20`}>
+            <div className='bg-yellow-00 lg:w-[93%] overflow-hidden'>
+              <div id='skills-section' className={`flex flex-col lg:w-[30%] bg-yellow-00 mt-12 scroll-mt-12 sm:scroll-mt-15 sm:mt-12 lg:w-full lg:mt-20`}>
                 <h4 className='font-semibold lg:font-semibold lg:text-2xl text-[#6899E0]'>My coding</h4>
                 <h3 className='font-semibold sm:text-lg text-white lg:font-semibold lg:text-4xl lg:mt-3'>Skills</h3>
               </div>
@@ -330,7 +330,7 @@ function Page() {
                   </Swiper>
                 </div>
               </div>
-              <div id='experience-section' className='flex flex-col mt-10 sm:mt-10 lg:mt-20 lg:scroll-mt-[80px]'>
+              <div id='experience-section' className='flex flex-col mt-10 sm:mt-10 sm:scroll-mt-12 lg:mt-20 lg:scroll-mt-[80px] '>
                 <h4 className='lg:font-semibold font-semibold lg:text-2xl text-[#6899E0]'>My Job</h4>
                 <h3 className='text-white lg:font-semibold font-semibold lg:text-4xl lg:mt-3'>Experience</h3>
               </div>
@@ -343,7 +343,7 @@ function Page() {
                   </div>
                 </div>
                 <div className='bg-blue-00 lg:w-[75%] w-[75%] pt-1 px-3 sm:px-5 flex flex-col lg:p-4 lg:pt-6 lg:pl-8 overflow-y-auto lg:overflow-hidden'>
-                  <div className="flex items-center justify-between"><h3 className='font-bold text-xl text-[#6899E0]'>Software Developer</h3> <p className="text-red-400">- Genamplify Solutions Hub Pvt Ltd.</p></div>
+                  <div className="flex items-center justify-between"><h3 className='font-bold text-xl text-[#6899E0]'>Software Developer</h3> <p className="text-red-400 text-xs lg:text-sm">- Genamplify Solutions Hub Pvt Ltd.</p></div>
                   <p className='text-md mt-2 lg:mt-4'>As a Full-Stack Developer, I build responsive, scalable web applications using JavaScript, TypeScript, React, React Native, Node.js, Express, and MongoDB/PostgreSQL. I focus on seamless API integration, efficient database structuring, and intuitive UI design. My goal is to deliver optimized, high-performing digital solutions that align with user needs and evolving tech industry standards.</p>
                 </div>
               </div>
@@ -355,12 +355,12 @@ function Page() {
                   </div>
                 </div>
                 <div className='bg-blue-00 lg:w-[75%] w-[75%] flex pt-3 sm:px-5 sm:pt-3 flex-col px-3 lg:pt-7 lg:p-4 lg:pl-8 overflow-y-auto'>
-                  <div className="flex items-center justify-between"><h3 className='font-bold text-xl text-[#6899E0]'>Web Developer</h3> <p className="text-red-400">- Simple Like This.</p></div>
+                  <div className="flex items-center justify-between"><h3 className='font-bold text-xl text-[#6899E0]'>Web Developer</h3> <p className="text-red-400 text-xs lg:text-sm">- Simple Like This.</p></div>
                   <p className='text-md mt-2 lg:mt-4'>As a Full-Stack Web Developer, I develop dynamic full-stack applications with technologies like JavaScript, TypeScript, React, React Native, Node.js, Express, and MongoDB/PostgreSQL. My focus lies in creating clean APIs, structured data flow, and user-friendly interfaces. I aim to craft robust, modern solutions that meet real-world demands and adapt to the pace of technological growth.</p>
                 </div>
               </div>
               {/* Experience Cards ends */}
-              <div id='education-section' className='flex bg-purple-00 flex-col mt-10 sm:mt-10 lg:mt-20 lg:scroll-mt-[80px]'>
+              <div id='education-section' className='flex bg-purple-00 flex-col mt-10 sm:mt-10 sm:scroll-mt-12 lg:mt-20 lg:scroll-mt-[80px] '>
                 <h4 className='lg:font-semibold font-semibold lg:text-2xl text-[#6899E0]'>Education</h4>
                 <h3 className='text-white lg:font-semibold font-semibold lg:text-4xl lg:mt-3'>Summary</h3>
               </div>
@@ -373,7 +373,7 @@ function Page() {
                   </div>
                 </div>
                 <div className='bg-blue-00 lg:w-[75%] w-[75%] pt-1 px-3 sm:px-5 flex flex-col lg:p-4 lg:pt-6 lg:pl-8 overflow-y-auto lg:overflow-hidden'>
-                  <div className="flex items-center justify-between"><h3 className='font-bold text-xl text-[#6899E0]'>MallaReddy Institute of Technology & Science.</h3> <p className="text-red-400">Hyderabad.</p></div>
+                  <div className="flex items-center justify-between"><h3 className='font-bold text-xl text-[#6899E0]'>MallaReddy Institute of Technology & Science.</h3> <p className="text-red-400 text-xs lg:text-sm">Hyderabad.</p></div>
                   <p className='text-md mt-2 lg:mt-4'>Explored core computer science subjects like data structures, algorithms, operating systems, and database management systems, gaining foundational knowledge in efficient system design. Actively enhancing technical skills through self-learning, delving into advanced topics and mastering new tools. My personal projects demonstrate the practical application of theoretical concepts, showcasing a commitment to continuous improvement and problem-solving through code.</p>
                 </div>
               </div>
@@ -385,13 +385,13 @@ function Page() {
                   </div>
                 </div>
                 <div className='bg-blue-00 lg:w-[75%] w-[75%] flex pt-3 sm:px-5 sm:pt-3 flex-col px-3 lg:pt-7 lg:p-4 lg:pl-8 overflow-y-auto'>
-                  <div className="flex items-center justify-between"><h3 className='font-bold text-xl text-[#6899E0]'>Ratnapuri Institute of Technology College of Polytechnic.</h3> <p className="text-red-400">Sangareddy.</p></div>
+                  <div className="flex items-center justify-between"><h3 className='font-bold text-xl text-[#6899E0]'>Ratnapuri Institute of Technology College of Polytechnic.</h3> <p className="text-red-400 text-xs lg:text-sm">Sangareddy.</p></div>
                   <p className='text-md mt-2 lg:mt-4'>Gained a strong foundation in core electrical engineering areas: circuits, electronic devices, power, and control systems. This theoretical knowledge was reinforced by practical, hands-on lab work and technical projects. I honed critical analytical and troubleshooting skills, preparing me to diagnose and solve complex engineering challenges effectively in real-world scenarios.</p>
                 </div>
               </div>
               {/* Education Cards ends */}
               {/* Contact card */}
-              <div id='contact-section' className='flex flex-col lg:flex-row sm:flex-col bg-indigo-00 items-start mt-10 sm:mt-15 h-auto sm:h-full lg:w-full lg:h-[435px] lg:mt-15 rounded-t-lg sm:rounded-b-lg lg:rounded-l-lg'>
+              <div id='contact-section' className='flex flex-col lg:flex-row sm:flex-col bg-indigo-00 items-start mt-10 sm:mt-15 sm:scroll-mt-12 h-auto sm:h-full lg:w-full lg:h-[435px] lg:mt-15 rounded-t-lg sm:rounded-b-lg lg:rounded-l-lg'>
                 <div className='bg-yellow-00 h-[18%] sm:h-[28%] lg:w-[50%] lg:h-full rounded-t-lg sm:rounded-t-lg lg:rounded-l-lg'>
                   <img src={`${IMAGE_BASE_PATH}/Landing.jpg`} className="rounded-t-lg sm:rounded-t-lg lg:rounded-l-lg" alt="Landing" />
                   <h3 className="relative z-50 bottom-20 left-4 sm:bottom-30 lg:bottom-20 font-bold sm:text-4xl lg:text-3xl">Vamshi Vadla</h3>
