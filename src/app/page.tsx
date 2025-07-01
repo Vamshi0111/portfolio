@@ -441,7 +441,7 @@ function Page() {
                         className='shadow-lg p-2 text-white rounded-lg bg-[#232959] mt-3 sm:mt-5 lg:mt-5 lg:h-[100px] overflow-y-hidden'
                       />
                       <div className='bg-yellow-00 flex items-end justify-between'>
-                        <button type='submit' className='text-white font-medium bg-[#6899E0] lg:w-[100px] mt-3 lg:mt-5 sm:mt-6 rounded-full h-[30px] w-[65px] lg:h-[40px] sm:h-[30px] sm:w-[70px] hover:-translate-y-1 transition-transform hover:bg-red-400 duration-200'>
+                        <button type='submit' className='text-white font-medium bg-[#5E7CB2] lg:w-[100px] mt-3 lg:mt-5 sm:mt-6 rounded-full h-[30px] w-[65px] lg:h-[40px] sm:h-[30px] sm:w-[70px] hover:-translate-y-1 transition-transform hover:bg-red-400 duration-200'>
                           Submit
                         </button>
                         <div className='bg-green-00 flex gap-2 sm:gap-2 lg:gap-3'>
