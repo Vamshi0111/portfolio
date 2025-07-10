@@ -176,7 +176,7 @@ function Page() {
           </div>
           {/* Image started*/}
           <div className='flex bg-red-00 lg:flex sm:flex bg-[#0E1123] rounded-xl ring-2 relative z-0 right-0 top-10 sm:static sm:right-0 sm:top-0 ring-transparent w-[70%] h-[10%] sm:h-auto sm:w-[60%] lg:w-[40%] lg:h-auto flex items-start justify-center'>
-            <img src={`${IMAGE_BASE_PATH}/IMG_1.png`} alt="img_1" className='h-full w-full sm:h-[400px] sm:w-[430px] lg:h-[550px] lg:w-[500px] lg:mt-30' />
+            <img src={`${IMAGE_BASE_PATH}/IMG_2.png`} alt="img_1" className='h-full w-full sm:h-[400px] sm:w-[430px] lg:h-[550px] lg:w-[500px] lg:mt-30' />
           </div>
           {/* Image ended */}
         </div>
