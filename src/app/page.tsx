@@ -288,7 +288,7 @@ function Page() {
                     </div>
                   </a>
                 </div>
-                <p className='mt-2 text-white lg:mt-3'>This weather application is built using Next.js and Tailwind CSS to provide real-time weather updates based on the user's current location. It uses geolocation to fetch coordinates and displays temperature, humidity and more through a clean, responsive UI. The app showcases strong API integration, modern frontend development, and a seamless user experience across devices.
+                <p className='mt-2 text-white lg:mt-3'>This weather application is built using Next.js and Tailwind CSS to provide real-time weather updates based on the user&apos;s current location. It uses geolocation to fetch coordinates and displays temperature, humidity and more through a clean, responsive UI. The app showcases strong API integration, modern frontend development, and a seamless user experience across devices.
                 </p>
               </div>
             </div>
