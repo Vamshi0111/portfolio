@@ -208,8 +208,8 @@ function Page() {
                     target='_blank'
                     rel="noopener noreferrer"
                   >
-                    <div className='w-[55px] text-white sm:w-[65px] sm:h-[33px] mt-7 pl-1 lg:mt-0 sm:mt-0 lg:w-[85px] lg:h-[35px] border rounded-full flex items-center justify-between sm:pl-2 sm:pr-1 lg:pl-3 lg:pr-3 hover:bg-red-400 hover:-translate-y-1 transition-transform duration-200'>
-                      <p>Visit</p>
+                    <div className='w-[55px] h-[27px] text-white sm:w-[65px] sm:h-[33px] pl-1 lg:mt-0 sm:mt-0 lg:w-[85px] lg:h-[35px] border rounded-full flex items-center justify-around sm:pl-2 sm:pr-1 lg:pl-3 lg:pr-3 hover:bg-red-400 hover:-translate-y-1 transition-transform duration-200'>
+                      <p className="text-sm lg:text-lg">Visit</p>
                       <FaCaretRight />
                     </div>
                   </a>
@@ -234,8 +234,8 @@ function Page() {
                     target='_blank'
                     rel="noopener noreferrer"
                   >
-                    <div className='w-[55px] text-white sm:w-[65px] sm:h-[33px] pl-1 lg:mt-0 sm:mt-0 lg:w-[85px] lg:h-[35px] border rounded-full flex items-center justify-between sm:pl-2 sm:pr-1 lg:pl-3 lg:pr-3 hover:bg-red-400 hover:-translate-y-1 transition-transform duration-200'>
-                      <p>Visit</p>
+                    <div className='w-[55px] h-[27px] text-white sm:w-[65px] sm:h-[33px] pl-1 lg:mt-0 sm:mt-0 lg:w-[85px] lg:h-[35px] border rounded-full flex items-center justify-around sm:pl-2 sm:pr-1 lg:pl-3 lg:pr-3 hover:bg-red-400 hover:-translate-y-1 transition-transform duration-200'>
+                      <p className="text-sm lg:text-lg">Visit</p>
                       <FaCaretRight />
                     </div>
                   </a>
@@ -257,8 +257,8 @@ function Page() {
                     target='_blank'
                     rel="noopener noreferrer"
                   >
-                    <div className='w-[55px] text-white sm:w-[65px] sm:h-[33px] pl-1 lg:mt-0 sm:mt-0 lg:w-[85px] lg:h-[35px] border rounded-full flex items-center justify-between sm:pl-2 sm:pr-1 lg:pl-3 lg:pr-3 hover:bg-red-400 hover:-translate-y-1 transition-transform duration-200'>
-                      <p>Visit</p>
+                    <div className='w-[55px] h-[27px] text-white sm:w-[65px] sm:h-[33px] pl-1 lg:mt-0 sm:mt-0 lg:w-[85px] lg:h-[35px] border rounded-full flex items-center justify-around sm:pl-2 sm:pr-1 lg:pl-3 lg:pr-3 hover:bg-red-400 hover:-translate-y-1 transition-transform duration-200'>
+                      <p className="text-sm lg:text-lg">Visit</p>
                       <FaCaretRight />
                     </div>
                   </a>
@@ -270,6 +270,29 @@ function Page() {
               </div>
             </div>
             {/* S4 Tech card */}
+            {/* weatherapp */}
+            <div className='flex flex-col items-start overflow-y-auto lg:overflow-hidden sm:flex p-3 sm:px-4 lg:flex lg:flex-row lg:items-center w-[100%] h-[300px] lg:w-[93%] lg:gap-10 mt-5 sm:mt-5 lg:mt-10 bg-rose-00 lg:mr-44 lg:h-[200px] rounded-[20px] sm:rounded-[20px] lg:rounded-[20px] pt-3 lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
+              <div className='lg:w-[25%] w-full bg-yellow-00 flex justify-start lg:items-center lg:justify-center'>
+                <img src={`${IMAGE_BASE_PATH}/cloud.png`} alt="cloudimage" className='h-[50px] sm:h-[80px] lg:h-[150px]' />
+              </div>
+              <div className={`bg-green-00 lg:h-[80%] lg:w-[65%]`}>
+                <div className='flex mt-2 sm:mt-5 lg:mt-0 items-center justify-between'>
+                  <h1 className='font-bold text-2xl text-[#6899E0]'>WeatherApp.</h1>
+                  <a href="https://vamshi0111.github.io/weatherapp/"
+                    target='_blank'
+                    rel="noopener noreferrer"
+                  >
+                    <div className='w-[55px] h-[27px] text-white sm:w-[65px] sm:h-[33px] pl-1 lg:mt-0 sm:mt-0 lg:w-[85px] lg:h-[35px] border rounded-full flex items-center justify-around sm:pl-2 sm:pr-1 lg:pl-3 lg:pr-3 hover:bg-red-400 hover:-translate-y-1 transition-transform duration-200'>
+                      <p className="text-sm lg:text-lg">Visit</p>
+                      <FaCaretRight />
+                    </div>
+                  </a>
+                </div>
+                <p className='mt-2 text-white lg:mt-3'>This weather application is built using Next.js and Tailwind CSS to provide real-time weather updates based on the user's current location. It uses geolocation to fetch coordinates and displays temperature, humidity and more through a clean, responsive UI. The app showcases strong API integration, modern frontend development, and a seamless user experience across devices.
+                </p>
+              </div>
+            </div>
+            {/* weatherapp */}
             {/* Messenger card */}
             <div className='flex flex-col items-start overflow-y-auto lg:overflow-hidden sm:flex p-3 sm:px-4 lg:flex lg:flex-row lg:items-center w-[100%] h-[300px] lg:w-[93%] lg:gap-10 mt-5 sm:mt-5 lg:mt-10 bg-rose-00 lg:mr-44 lg:h-[200px] rounded-[20px] sm:rounded-[20px] lg:rounded-[20px] pt-3 lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
               <div className='lg:w-[25%] w-full bg-yellow-00 flex justify-start lg:items-center lg:justify-center'>
@@ -337,7 +360,7 @@ function Page() {
               {/* Experience Cards starts */}
               <div className='lg:h-[200px] h-[150px] bg-red-00 mt-5 sm:mt-5 lg:mt-5 flex'>
                 <div className='relative bg-yellow-00 w-[25%] px-3 lg:w-[25%] border-r-2 border-[#7F95CF] flex items-center justify-center'>
-                  <h3 className='font-bold text-white lg:text-xl'>Dec 2023 - Jan 2025 <br/> <p className="mt-3 text-end">Fulltime</p></h3>
+                  <h3 className='font-bold text-white lg:text-xl'>Dec 2023 - Jan 2025 <br /> <p className="mt-3 text-end">Fulltime</p></h3>
                   <div className='rounded-full border-2 border-[#7F95CF] h-5 w-5 sm:h-7 sm:w-7 lg:h-7 lg:w-7 absolute flex justify-center items-center -mr-[11px] sm:-mr-[15px] lg:-mr-[15px] right-0 top-center font-bold text-lg shadow-lg'>
                     <div className='rounded-full bg-white h-3 w-3 sm:h-4 sm:w-4 lg:w-4 lg:h-4' />
                   </div>
@@ -349,7 +372,7 @@ function Page() {
               </div>
               <div className='lg:h-[200px] h-[150px] bg-red-00 flex'>
                 <div className='relative bg-yellow-00 lg:w-[25%] px-3 w-[25%] border-r-2 border-[#7F95CF] flex items-center justify-center'>
-                  <h3 className='font-bold text-white lg:text-xl'>Jan 2025 - Apr 2025 <br/> <p className="pt-3 text-end">Intern</p></h3>
+                  <h3 className='font-bold text-white lg:text-xl'>Jan 2025 - Apr 2025 <br /> <p className="pt-3 text-end">Intern</p></h3>
                   <div className='rounded-full border-2 border-[#7F95CF] h-5 w-5 sm:h-7 sm:w-7 lg:h-7 lg:w-7 absolute flex justify-center items-center -mr-[11px] sm:-mr-[15px] lg:-mr-[15px] right-0 top-center font-bold text-lg shadow-lg'>
                     <div className='rounded-full bg-white h-3 w-3 sm:h-4 sm:w-4 lg:h-4 lg:w-4' />
                   </div>
@@ -470,7 +493,7 @@ function Page() {
         <div className='rounded-full h-8 w-8 sm:h-15 sm:w-15 lg:h-16 lg:w-16 bg-gradient-to-r from-[#6A97E3] to-white flex items-center justify-center relative z-50 bottom-4 -left-15 sm:bottom-5 sm:-left-54 lg:bottom-7.5 lg:-left-97'>
           <img src={`${IMAGE_BASE_PATH}/Vv.png`} alt="Vv" className='w-[20px] sm:w-[40px] lg:w-[50px]' />
         </div>
-        <LiaCopyrightSolid className="text-white"/>
+        <LiaCopyrightSolid className="text-white" />
         <p className='ml-1 text-white sm:ml-1 lg:ml-1 text-xs sm:text-sm lg:text-lg'>2025 Vamshi. All rights reserved.</p>
       </div>
       {/* Footer */}
