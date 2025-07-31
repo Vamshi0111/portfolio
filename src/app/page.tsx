@@ -1,6 +1,6 @@
 "use client";
 import { FaLinkedinIn, FaWhatsapp, FaCaretRight, FaReact, FaFigma, FaAws, FaArrowUp, FaSkype, FaInstagram, FaFacebook } from "react-icons/fa6";
-import { FaGithub } from "react-icons/fa";
+import { FaCaretUp, FaGithub } from "react-icons/fa";
 import { DiNodejs } from "react-icons/di";
 import { RiTailwindCssFill, RiJavascriptFill } from "react-icons/ri";
 import { SiPostgresql, SiMui, SiMongodb } from "react-icons/si";
@@ -30,7 +30,6 @@ function Page() {
 
   const [showButton, setShowButton] = useState(false);
   const [textIndex, setTextIndex] = useState(0);
-
   const [subIndex, setSubIndex] = useState(0);
   const [forward, setForward] = useState(true);
   const [form, setForm] = useState({
@@ -39,6 +38,7 @@ function Page() {
     subject: '',
     message: ''
   });
+  const [show, setShow] = useState(false);
 
   const texts = useMemo(() => {
     return ["I'm a Developer", "I'm a Designer", "I'm a Freelancer"];
@@ -269,63 +269,72 @@ function Page() {
                 </p>
               </div>
             </div>
+            <div className="bg-red-00 lg:w-[93%] lg:mt-2 flex justify-end items-center lg:gap-1 gap-1 mt-2 sm:gap-1 sm:mt-3" onClick={() => setShow(!show)}>
+              <button className={`bg-green-00 lg:w-20 lg:text-lg font-regular cursor-pointer transition-all duration-200 ease-in-out`}>
+                {show ? 'ShowLess' : 'ShowMore'}
+              </button>
+              {show ? <FaCaretUp className="transform duration-500 rotate-0" /> : <FaCaretUp className="transform duration-500 rotate-180" />}
+            </div>
             {/* S4 Tech card */}
             {/* weatherapp */}
-            <div className='flex flex-col items-start overflow-y-auto lg:overflow-hidden sm:flex p-3 sm:px-4 lg:flex lg:flex-row lg:items-center w-[100%] h-[300px] lg:w-[93%] lg:gap-10 mt-5 sm:mt-5 lg:mt-10 bg-rose-00 lg:mr-44 lg:h-[200px] rounded-[20px] sm:rounded-[20px] lg:rounded-[20px] pt-3 lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
-              <div className='lg:w-[25%] w-full bg-yellow-00 flex justify-start lg:items-center lg:justify-center'>
-                <img src={`${IMAGE_BASE_PATH}/cloud.png`} alt="cloudimage" className='h-[50px] sm:h-[80px] lg:h-[150px]' />
-              </div>
-              <div className={`bg-green-00 lg:h-[80%] lg:w-[65%]`}>
-                <div className='flex mt-2 sm:mt-5 lg:mt-0 items-center justify-between'>
-                  <h1 className='font-bold text-2xl text-[#6899E0]'>WeatherApp.</h1>
-                  <a href="https://vamshi0111.github.io/weatherapp/"
-                    target='_blank'
-                    rel="noopener noreferrer"
-                  >
-                    <div className='w-[55px] h-[27px] text-white sm:w-[65px] sm:h-[33px] pl-1 lg:mt-0 sm:mt-0 lg:w-[85px] lg:h-[35px] border rounded-full flex items-center justify-around sm:pl-2 sm:pr-1 lg:pl-3 lg:pr-3 hover:bg-red-400 hover:-translate-y-1 transition-transform duration-200'>
-                      <p className="text-sm lg:text-lg">Visit</p>
-                      <FaCaretRight />
+              <div className={`transition-all duration-500 ease-in-out overflow-hidden ${show ? 'max-h-[3000px] opacity-100' : 'max-h-0 opacity-0'
+                }`}>
+                <div className='flex flex-col items-start overflow-y-auto lg:overflow-hidden sm:flex p-3 sm:px-4 lg:flex lg:flex-row lg:items-center w-[100%] h-[300px] lg:w-[93%] lg:gap-10 mt-3 sm:mt-5 lg:mt-10 bg-rose-00 lg:mr-44 lg:h-[200px] rounded-[20px] sm:rounded-[20px] lg:rounded-[20px] pt-3 lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
+                  <div className='lg:w-[25%] w-full bg-yellow-00 flex justify-start lg:items-center lg:justify-center'>
+                    <img src={`${IMAGE_BASE_PATH}/cloud.png`} alt="cloudimage" className='h-[50px] sm:h-[80px] lg:h-[150px]' />
+                  </div>
+                  <div className={`bg-green-00 lg:h-[80%] lg:w-[65%]`}>
+                    <div className='flex mt-2 sm:mt-5 lg:mt-0 items-center justify-between'>
+                      <h1 className='font-bold text-2xl text-[#6899E0]'>WeatherApp.</h1>
+                      <a href="https://vamshi0111.github.io/weatherapp/"
+                        target='_blank'
+                        rel="noopener noreferrer"
+                      >
+                        <div className='w-[55px] h-[27px] text-white sm:w-[65px] sm:h-[33px] pl-1 lg:mt-0 sm:mt-0 lg:w-[85px] lg:h-[35px] border rounded-full flex items-center justify-around sm:pl-2 sm:pr-1 lg:pl-3 lg:pr-3 hover:bg-red-400 hover:-translate-y-1 transition-transform duration-200'>
+                          <p className="text-sm lg:text-lg">Visit</p>
+                          <FaCaretRight />
+                        </div>
+                      </a>
                     </div>
-                  </a>
+                    <p className='mt-2 text-white lg:mt-3'>This weather application is built using Next.js and Tailwind CSS to provide real-time weather updates based on the user&apos;s current location. It uses geolocation to fetch coordinates and displays temperature, humidity and more through a clean, responsive UI. The app showcases strong API integration, modern frontend development, and a seamless user experience across devices.
+                    </p>
+                  </div>
                 </div>
-                <p className='mt-2 text-white lg:mt-3'>This weather application is built using Next.js and Tailwind CSS to provide real-time weather updates based on the user&apos;s current location. It uses geolocation to fetch coordinates and displays temperature, humidity and more through a clean, responsive UI. The app showcases strong API integration, modern frontend development, and a seamless user experience across devices.
-                </p>
-              </div>
-            </div>
-            {/* weatherapp */}
-            {/* Messenger card */}
-            <div className='flex flex-col items-start overflow-y-auto lg:overflow-hidden sm:flex p-3 sm:px-4 lg:flex lg:flex-row lg:items-center w-[100%] h-[300px] lg:w-[93%] lg:gap-10 mt-5 sm:mt-5 lg:mt-10 bg-rose-00 lg:mr-44 lg:h-[200px] rounded-[20px] sm:rounded-[20px] lg:rounded-[20px] pt-3 lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
-              <div className='lg:w-[25%] w-full bg-yellow-00 flex justify-start lg:items-center lg:justify-center'>
-                <img src={`${IMAGE_BASE_PATH}/Messenger.png`} alt="messengerapp" className='h-[50px] sm:h-[80px] lg:h-[150px] lg:rounded-[20px] rounded-[10px]' />
-              </div>
-              <div className={`bg-green-00 lg:h-[80%] lg:w-[65%]`}>
-                <div className='flex mt-4 sm:mt-5 lg:mt-0 items-center justify-between'>
-                  <h1 className='font-bold text-2xl text-[#6899E0]'>MessengerApp.</h1>
+                {/* weatherapp */}
+                {/* Messenger card */}
+                <div className='flex flex-col items-start overflow-y-auto lg:overflow-hidden sm:flex p-3 sm:px-4 lg:flex lg:flex-row lg:items-center w-[100%] h-[300px] lg:w-[93%] lg:gap-10 mt-5 sm:mt-5 lg:mt-10 bg-rose-00 lg:mr-44 lg:h-[200px] rounded-[20px] sm:rounded-[20px] lg:rounded-[20px] pt-3 lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
+                  <div className='lg:w-[25%] w-full bg-yellow-00 flex justify-start lg:items-center lg:justify-center'>
+                    <img src={`${IMAGE_BASE_PATH}/Messenger.png`} alt="messengerapp" className='h-[50px] sm:h-[80px] lg:h-[150px] lg:rounded-[20px] rounded-[10px]' />
+                  </div>
+                  <div className={`bg-green-00 lg:h-[80%] lg:w-[65%]`}>
+                    <div className='flex mt-4 sm:mt-5 lg:mt-0 items-center justify-between'>
+                      <h1 className='font-bold text-2xl text-[#6899E0]'>MessengerApp.</h1>
+                    </div>
+                    <p className='mt-2 text-white sm:mt-3 lg:mt-3'>MessengerApp is a real-time cross-platform messaging application developed using React for web and React Native for mobile.
+                      Key features include instant messaging, media sharing, and secure user authentication.
+                      I served as the Team Leader, managing coordination, ensuring smooth progress, and guiding development.
+                      I also contributed hands-on by building major UI screens for both platforms.
+                    </p>
+                  </div>
                 </div>
-                <p className='mt-2 text-white sm:mt-3 lg:mt-3'>MessengerApp is a real-time cross-platform messaging application developed using React for web and React Native for mobile.
-                  Key features include instant messaging, media sharing, and secure user authentication.
-                  I served as the Team Leader, managing coordination, ensuring smooth progress, and guiding development.
-                  I also contributed hands-on by building major UI screens for both platforms.
-                </p>
-              </div>
-            </div>
-            {/* Messenger card */}
-            {/* ShipEase card */}
-            <div className='flex flex-col items-start overflow-y-auto lg:overflow-hidden sm:flex p-3 sm:px-4 lg:flex lg:flex-row lg:items-center w-[100%] h-[300px] lg:w-[93%] lg:gap-10 mt-5 sm:mt-5 lg:mt-10 bg-rose-00 lg:mr-44 lg:h-[200px] rounded-[20px] sm:rounded-[20px] lg:rounded-[20px] pt-3 lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
-              <div className='lg:w-[25%] w-full bg-yellow-00 flex justify-start lg:items-center lg:justify-center'>
-                <img src={`${IMAGE_BASE_PATH}/ShipEase.png`} alt="Shipease" className='h-[50px] sm:h-[80px] lg:h-[150px] lg:rounded-[20px] rounded-[10px]' />
-              </div>
-              <div className={`bg-green-00 lg:h-[80%] lg:w-[65%]`}>
-                <div className='flex mt-4 sm:mt-5 lg:mt-0 items-center justify-between'>
-                  <h1 className='font-bold text-2xl text-[#6899E0]'>ShipEase.</h1>
+                {/* Messenger card */}
+                {/* ShipEase card */}
+                <div className='flex flex-col items-start overflow-y-auto lg:overflow-hidden sm:flex p-3 sm:px-4 lg:flex lg:flex-row lg:items-center w-[100%] h-[300px] lg:w-[93%] lg:gap-10 mt-5 sm:mt-5 lg:mt-10 bg-rose-00 lg:mr-44 lg:h-[200px] rounded-[20px] sm:rounded-[20px] lg:rounded-[20px] pt-3 lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
+                  <div className='lg:w-[25%] w-full bg-yellow-00 flex justify-start lg:items-center lg:justify-center'>
+                    <img src={`${IMAGE_BASE_PATH}/ShipEase.png`} alt="Shipease" className='h-[50px] sm:h-[80px] lg:h-[150px] lg:rounded-[20px] rounded-[10px]' />
+                  </div>
+                  <div className={`bg-green-00 lg:h-[80%] lg:w-[65%]`}>
+                    <div className='flex mt-4 sm:mt-5 lg:mt-0 items-center justify-between'>
+                      <h1 className='font-bold text-2xl text-[#6899E0]'>ShipEase.</h1>
+                    </div>
+                    <p className='mt-2 text-white sm:mt-3 lg:mt-3'>ShipEase is a transport logistics app built with React (web) and React Native (mobile).
+                      It features vehicle selection, booking, real-time tracking, and fare estimation.
+                      As Team Leader, I coordinated development, managed workflow, and ensured timely delivery.
+                      I also contributed directly by developing major user interfaces for both web and mobile platforms.
+                    </p>
+                  </div>
                 </div>
-                <p className='mt-2 text-white sm:mt-3 lg:mt-3'>ShipEase is a transport logistics app built with React (web) and React Native (mobile).
-                  It features vehicle selection, booking, real-time tracking, and fare estimation.
-                  As Team Leader, I coordinated development, managed workflow, and ensured timely delivery.
-                  I also contributed directly by developing major user interfaces for both web and mobile platforms.
-                </p>
               </div>
-            </div>
             {/* ShipEase card */}
             <div className='bg-yellow-00 lg:w-[93%] overflow-hidden'>
               <div id='skills-section' className={`flex flex-col lg:w-[30%] bg-yellow-00 mt-12 scroll-mt-12 sm:scroll-mt-15 sm:mt-12 lg:w-full lg:mt-20`}>
@@ -464,7 +473,7 @@ function Page() {
                         className='shadow-lg p-2 text-white rounded-lg bg-[#232959] mt-3 sm:mt-5 lg:mt-5 lg:h-[100px] overflow-y-hidden'
                       />
                       <div className='bg-yellow-00 flex items-end justify-between'>
-                        <button type='submit' className='text-white font-medium bg-[#5E7CB2] lg:w-[100px] mt-3 lg:mt-5 sm:mt-6 rounded-full h-[30px] w-[65px] lg:h-[40px] sm:h-[30px] sm:w-[70px] hover:-translate-y-1 transition-transform hover:bg-red-400 duration-200'>
+                        <button type='submit' className='text-white text-xs sm:text-medium lg:text-lg font-medium sm:font-medium lg:font-medium bg-[#5E7CB2] lg:w-[100px] mt-3 lg:mt-5 sm:mt-6 rounded-full h-[30px] w-[65px] lg:h-[40px] sm:h-[30px] sm:w-[70px] hover:-translate-y-1 transition-transform hover:bg-red-400 duration-200'>
                           Submit
                         </button>
                         <div className='bg-green-00 flex gap-2 sm:gap-2 lg:gap-3'>
