@@ -122,7 +122,7 @@ function Page() {
       {showButton && (
         <div
           onClick={scrollToTop}
-          className="fixed h-10 w-10 bottom-6 right-6 sm:h-[60px] sm:w-[60px] sm:bottom-6 sm:right-6 lg:bottom-6 lg:right-6 lg:z-50 flex items-center justify-center lg:h-[40px] lg:w-[40px] rounded-full bg-red-400 hover:bg-[#5E7CB2] text-white shadow-lg transition-transform duration-300 hover:-translate-y-1"
+          className="fixed z-50 h-10 w-10 bottom-6 right-6 sm:h-[60px] sm:w-[60px] sm:bottom-6 sm:right-6 lg:bottom-6 lg:right-6 lg:z-50 flex items-center justify-center lg:h-[40px] lg:w-[40px] rounded-full bg-red-400 hover:bg-[#5E7CB2] text-white shadow-lg transition-transform duration-300 hover:-translate-y-1 cursor-pointer"
         >
           <FaArrowUp className="sm:h-20 lg:h-auto" />
         </div>
@@ -142,7 +142,7 @@ function Page() {
           <Link href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}#education-section`} className="hidden sm:flex lg:flex"><p className={`text-xs sm:text-sm text-white lg:text-lg hover:text-red-400 transition-colors duration-200`}>Education</p></Link>
         </div>
         <div className='h-7 w-13 rounded-full lg:h-10 lg:w-20 sm:h-10 sm:w-20 flex justify-center items-center bg-[#5E7CB2] transition-transform hover:-translate-y-1 hover:bg-red-400'>
-          <Link href='#contact-section'><p className={`text-xs text-white font-medium sm:text-lg lg:text-lg lg:font-medium`}>Contact</p></Link>
+          <Link href='#contact-section'><p className={`text-xs text-white font-medium sm:font-medium lg:font-medium sm:text-lg lg:text-lg`}>Contact</p></Link>
         </div>
       </nav>
 
@@ -473,7 +473,7 @@ function Page() {
                         className='shadow-lg p-2 text-white rounded-lg bg-[#232959] mt-3 sm:mt-5 lg:mt-5 lg:h-[100px] overflow-y-hidden'
                       />
                       <div className='bg-yellow-00 flex items-end justify-between'>
-                        <button type='submit' className='text-white text-xs sm:text-medium lg:text-lg font-medium sm:font-medium lg:font-medium bg-[#5E7CB2] lg:w-[100px] mt-3 lg:mt-5 sm:mt-6 rounded-full h-[30px] w-[65px] lg:h-[40px] sm:h-[30px] sm:w-[70px] hover:-translate-y-1 transition-transform hover:bg-red-400 duration-200'>
+                        <button type='submit' className='text-white text-xs sm:text-medium lg:text-lg font-medium sm:font-medium lg:font-medium bg-[#5E7CB2] lg:w-[100px] mt-3 lg:mt-5 sm:mt-6 rounded-full h-[30px] w-[65px] lg:h-[40px] sm:h-[30px] sm:w-[70px] hover:-translate-y-1 transition-transform hover:bg-red-400 duration-200 cursor-pointer'>
                           Submit
                         </button>
                         <div className='bg-green-00 flex gap-2 sm:gap-2 lg:gap-3'>
