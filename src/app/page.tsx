@@ -2,7 +2,7 @@
 import { FaLinkedinIn, FaWhatsapp, FaCaretRight, FaReact, FaFigma, FaAws, FaArrowUp, FaSkype, FaInstagram, FaFacebook } from "react-icons/fa6";
 import { FaCaretUp, FaGithub } from "react-icons/fa";
 import { DiNodejs } from "react-icons/di";
-import { RiTailwindCssFill, RiJavascriptFill } from "react-icons/ri";
+import { RiTailwindCssFill, RiJavascriptFill, RiNextjsFill } from "react-icons/ri";
 import { SiPostgresql, SiMui, SiMongodb } from "react-icons/si";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
@@ -12,9 +12,11 @@ import { useEffect, useState, useMemo } from 'react';
 import emailjs from "emailjs-com";
 import Link from 'next/link';
 import { LiaCopyrightSolid } from 'react-icons/lia';
+import { TbBrandNextjs } from "react-icons/tb";
 
 const skillCards = [
-  { icon: <FaReact className='text-3xl sm:text-9xl lg:text-9xl' />, name: 'React' },
+  { icon: <FaReact className='text-3xl sm:text-9xl lg:text-9xl' />, name: 'React.js' },
+  { icon: <TbBrandNextjs className='text-3xl sm:text-9xl lg:text-9xl' />, name: 'Next.js' },
   { icon: <DiNodejs className='text-3xl sm:text-9xl lg:text-9xl' />, name: 'Node.js' },
   { icon: <RiTailwindCssFill className='text-3xl sm:text-9xl lg:text-9xl' />, name: 'Tailwind CSS' },
   { icon: <SiPostgresql className='text-3xl sm:text-9xl lg:text-9xl' />, name: 'PostgreSQL' },
@@ -277,64 +279,64 @@ function Page() {
             </div>
             {/* S4 Tech card */}
             {/* weatherapp */}
-              <div className={`transition-all duration-500 ease-in-out overflow-hidden ${show ? 'max-h-[3000px] opacity-100' : 'max-h-0 opacity-0'
-                }`}>
-                <div className='flex flex-col items-start overflow-y-auto lg:overflow-hidden sm:flex p-3 sm:px-4 lg:flex lg:flex-row lg:items-center w-[100%] h-[300px] lg:w-[93%] lg:gap-10 mt-3 sm:mt-5 lg:mt-10 bg-rose-00 lg:mr-44 lg:h-[200px] rounded-[20px] sm:rounded-[20px] lg:rounded-[20px] pt-3 lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
-                  <div className='lg:w-[25%] w-full bg-yellow-00 flex justify-start lg:items-center lg:justify-center'>
-                    <img src={`${IMAGE_BASE_PATH}/cloud.png`} alt="cloudimage" className='h-[50px] sm:h-[80px] lg:h-[150px]' />
-                  </div>
-                  <div className={`bg-green-00 lg:h-[80%] lg:w-[65%]`}>
-                    <div className='flex mt-2 sm:mt-5 lg:mt-0 items-center justify-between'>
-                      <h1 className='font-bold text-2xl text-[#6899E0]'>WeatherApp.</h1>
-                      <a href="https://vamshi0111.github.io/weatherapp/"
-                        target='_blank'
-                        rel="noopener noreferrer"
-                      >
-                        <div className='w-[55px] h-[27px] text-white sm:w-[65px] sm:h-[33px] pl-1 lg:mt-0 sm:mt-0 lg:w-[85px] lg:h-[35px] border rounded-full flex items-center justify-around sm:pl-2 sm:pr-1 lg:pl-3 lg:pr-3 hover:bg-red-400 hover:-translate-y-1 transition-transform duration-200'>
-                          <p className="text-sm lg:text-lg">Visit</p>
-                          <FaCaretRight />
-                        </div>
-                      </a>
-                    </div>
-                    <p className='mt-2 text-white lg:mt-3'>This weather application is built using Next.js and Tailwind CSS to provide real-time weather updates based on the user&apos;s current location. It uses geolocation to fetch coordinates and displays temperature, humidity and more through a clean, responsive UI. The app showcases strong API integration, modern frontend development, and a seamless user experience across devices.
-                    </p>
-                  </div>
+            <div className={`transition-all duration-500 ease-in-out overflow-hidden ${show ? 'max-h-[3000px] opacity-100' : 'max-h-0 opacity-0'
+              }`}>
+              <div className='flex flex-col items-start overflow-y-auto lg:overflow-hidden sm:flex p-3 sm:px-4 lg:flex lg:flex-row lg:items-center w-[100%] h-[300px] lg:w-[93%] lg:gap-10 mt-3 sm:mt-5 lg:mt-10 bg-rose-00 lg:mr-44 lg:h-[200px] rounded-[20px] sm:rounded-[20px] lg:rounded-[20px] pt-3 lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
+                <div className='lg:w-[25%] w-full bg-yellow-00 flex justify-start lg:items-center lg:justify-center'>
+                  <img src={`${IMAGE_BASE_PATH}/cloud.png`} alt="cloudimage" className='h-[50px] sm:h-[80px] lg:h-[150px]' />
                 </div>
-                {/* weatherapp */}
-                {/* Messenger card */}
-                <div className='flex flex-col items-start overflow-y-auto lg:overflow-hidden sm:flex p-3 sm:px-4 lg:flex lg:flex-row lg:items-center w-[100%] h-[300px] lg:w-[93%] lg:gap-10 mt-5 sm:mt-5 lg:mt-10 bg-rose-00 lg:mr-44 lg:h-[200px] rounded-[20px] sm:rounded-[20px] lg:rounded-[20px] pt-3 lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
-                  <div className='lg:w-[25%] w-full bg-yellow-00 flex justify-start lg:items-center lg:justify-center'>
-                    <img src={`${IMAGE_BASE_PATH}/Messenger.png`} alt="messengerapp" className='h-[50px] sm:h-[80px] lg:h-[150px] lg:rounded-[20px] rounded-[10px]' />
+                <div className={`bg-green-00 lg:h-[80%] lg:w-[65%]`}>
+                  <div className='flex mt-2 sm:mt-5 lg:mt-0 items-center justify-between'>
+                    <h1 className='font-bold text-2xl text-[#6899E0]'>WeatherApp.</h1>
+                    <a href="https://vamshi0111.github.io/weatherapp/"
+                      target='_blank'
+                      rel="noopener noreferrer"
+                    >
+                      <div className='w-[55px] h-[27px] text-white sm:w-[65px] sm:h-[33px] pl-1 lg:mt-0 sm:mt-0 lg:w-[85px] lg:h-[35px] border rounded-full flex items-center justify-around sm:pl-2 sm:pr-1 lg:pl-3 lg:pr-3 hover:bg-red-400 hover:-translate-y-1 transition-transform duration-200'>
+                        <p className="text-sm lg:text-lg">Visit</p>
+                        <FaCaretRight />
+                      </div>
+                    </a>
                   </div>
-                  <div className={`bg-green-00 lg:h-[80%] lg:w-[65%]`}>
-                    <div className='flex mt-4 sm:mt-5 lg:mt-0 items-center justify-between'>
-                      <h1 className='font-bold text-2xl text-[#6899E0]'>MessengerApp.</h1>
-                    </div>
-                    <p className='mt-2 text-white sm:mt-3 lg:mt-3'>MessengerApp is a real-time cross-platform messaging application developed using React for web and React Native for mobile.
-                      Key features include instant messaging, media sharing, and secure user authentication.
-                      I served as the Team Leader, managing coordination, ensuring smooth progress, and guiding development.
-                      I also contributed hands-on by building major UI screens for both platforms.
-                    </p>
-                  </div>
-                </div>
-                {/* Messenger card */}
-                {/* ShipEase card */}
-                <div className='flex flex-col items-start overflow-y-auto lg:overflow-hidden sm:flex p-3 sm:px-4 lg:flex lg:flex-row lg:items-center w-[100%] h-[300px] lg:w-[93%] lg:gap-10 mt-5 sm:mt-5 lg:mt-10 bg-rose-00 lg:mr-44 lg:h-[200px] rounded-[20px] sm:rounded-[20px] lg:rounded-[20px] pt-3 lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
-                  <div className='lg:w-[25%] w-full bg-yellow-00 flex justify-start lg:items-center lg:justify-center'>
-                    <img src={`${IMAGE_BASE_PATH}/ShipEase.png`} alt="Shipease" className='h-[50px] sm:h-[80px] lg:h-[150px] lg:rounded-[20px] rounded-[10px]' />
-                  </div>
-                  <div className={`bg-green-00 lg:h-[80%] lg:w-[65%]`}>
-                    <div className='flex mt-4 sm:mt-5 lg:mt-0 items-center justify-between'>
-                      <h1 className='font-bold text-2xl text-[#6899E0]'>ShipEase.</h1>
-                    </div>
-                    <p className='mt-2 text-white sm:mt-3 lg:mt-3'>ShipEase is a transport logistics app built with React (web) and React Native (mobile).
-                      It features vehicle selection, booking, real-time tracking, and fare estimation.
-                      As Team Leader, I coordinated development, managed workflow, and ensured timely delivery.
-                      I also contributed directly by developing major user interfaces for both web and mobile platforms.
-                    </p>
-                  </div>
+                  <p className='mt-2 text-white lg:mt-3'>This weather application is built using Next.js and Tailwind CSS to provide real-time weather updates based on the user&apos;s current location. It uses geolocation to fetch coordinates and displays temperature, humidity and more through a clean, responsive UI. The app showcases strong API integration, modern frontend development, and a seamless user experience across devices.
+                  </p>
                 </div>
               </div>
+              {/* weatherapp */}
+              {/* Messenger card */}
+              <div className='flex flex-col items-start overflow-y-auto lg:overflow-hidden sm:flex p-3 sm:px-4 lg:flex lg:flex-row lg:items-center w-[100%] h-[300px] lg:w-[93%] lg:gap-10 mt-5 sm:mt-5 lg:mt-10 bg-rose-00 lg:mr-44 lg:h-[200px] rounded-[20px] sm:rounded-[20px] lg:rounded-[20px] pt-3 lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
+                <div className='lg:w-[25%] w-full bg-yellow-00 flex justify-start lg:items-center lg:justify-center'>
+                  <img src={`${IMAGE_BASE_PATH}/Messenger.png`} alt="messengerapp" className='h-[50px] sm:h-[80px] lg:h-[150px] lg:rounded-[20px] rounded-[10px]' />
+                </div>
+                <div className={`bg-green-00 lg:h-[80%] lg:w-[65%]`}>
+                  <div className='flex mt-4 sm:mt-5 lg:mt-0 items-center justify-between'>
+                    <h1 className='font-bold text-2xl text-[#6899E0]'>MessengerApp.</h1>
+                  </div>
+                  <p className='mt-2 text-white sm:mt-3 lg:mt-3'>MessengerApp is a real-time cross-platform messaging application developed using React for web and React Native for mobile.
+                    Key features include instant messaging, media sharing, and secure user authentication.
+                    I served as the Team Leader, managing coordination, ensuring smooth progress, and guiding development.
+                    I also contributed hands-on by building major UI screens for both platforms.
+                  </p>
+                </div>
+              </div>
+              {/* Messenger card */}
+              {/* ShipEase card */}
+              <div className='flex flex-col items-start overflow-y-auto lg:overflow-hidden sm:flex p-3 sm:px-4 lg:flex lg:flex-row lg:items-center w-[100%] h-[300px] lg:w-[93%] lg:gap-10 mt-5 sm:mt-5 lg:mt-10 bg-rose-00 lg:mr-44 lg:h-[200px] rounded-[20px] sm:rounded-[20px] lg:rounded-[20px] pt-3 lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
+                <div className='lg:w-[25%] w-full bg-yellow-00 flex justify-start lg:items-center lg:justify-center'>
+                  <img src={`${IMAGE_BASE_PATH}/ShipEase.png`} alt="Shipease" className='h-[50px] sm:h-[80px] lg:h-[150px] lg:rounded-[20px] rounded-[10px]' />
+                </div>
+                <div className={`bg-green-00 lg:h-[80%] lg:w-[65%]`}>
+                  <div className='flex mt-4 sm:mt-5 lg:mt-0 items-center justify-between'>
+                    <h1 className='font-bold text-2xl text-[#6899E0]'>ShipEase.</h1>
+                  </div>
+                  <p className='mt-2 text-white sm:mt-3 lg:mt-3'>ShipEase is a transport logistics app built with React (web) and React Native (mobile).
+                    It features vehicle selection, booking, real-time tracking, and fare estimation.
+                    As Team Leader, I coordinated development, managed workflow, and ensured timely delivery.
+                    I also contributed directly by developing major user interfaces for both web and mobile platforms.
+                  </p>
+                </div>
+              </div>
+            </div>
             {/* ShipEase card */}
             <div className='bg-yellow-00 lg:w-[93%] overflow-hidden'>
               <div id='skills-section' className={`flex flex-col lg:w-[30%] bg-yellow-00 mt-12 scroll-mt-12 sm:scroll-mt-15 sm:mt-12 lg:w-full lg:mt-20`}>
@@ -389,6 +391,22 @@ function Page() {
                 <div className='bg-blue-00 lg:w-[75%] w-[75%] flex pt-3 sm:px-5 sm:pt-3 flex-col px-3 lg:pt-7 lg:p-4 lg:pl-8 overflow-y-auto'>
                   <div className="flex items-center justify-between"><h3 className='font-bold text-xl text-[#6899E0]'>Web Developer</h3> <p className="text-red-400 text-xs lg:text-sm">- Simple Like This.</p></div>
                   <p className='text-md mt-2 text-white lg:mt-4'>As a Full-Stack Web Developer, I develop dynamic full-stack applications with technologies like JavaScript, TypeScript, React, React Native, Node.js, Express, and MongoDB/PostgreSQL. My focus lies in creating clean APIs, structured data flow, and user-friendly interfaces. I aim to craft robust, modern solutions that meet real-world demands and adapt to the pace of technological growth.</p>
+                </div>
+              </div>
+              <div className='lg:h-[200px] h-[150px] bg-red-00 flex'>
+                <div className='relative bg-yellow-00 lg:w-[25%] px-3 w-[25%] border-r-2 border-[#7F95CF] flex items-center justify-center'>
+                  <h3 className='font-bold text-white lg:text-xl'>Aug 2025 - Present <br /> <p className="pt-3 text-end">Fulltime</p></h3>
+                  <div className='rounded-full border-2 border-[#7F95CF] h-5 w-5 sm:h-7 sm:w-7 lg:h-7 lg:w-7 absolute flex justify-center items-center -mr-[11px] sm:-mr-[15px] lg:-mr-[15px] right-0 top-center font-bold text-lg shadow-lg'>
+                    <div className='rounded-full bg-white h-3 w-3 sm:h-4 sm:w-4 lg:h-4 lg:w-4' />
+                  </div>
+                </div>
+                <div className='bg-blue-00 lg:w-[75%] w-[75%] flex pt-3 sm:px-5 sm:pt-3 flex-col px-3 lg:pt-7 lg:p-4 lg:pl-8 overflow-y-auto'>
+                  <div className="flex items-center justify-between"><h3 className='font-bold text-xl text-[#6899E0]'>Full-Stack Developer</h3> <p className="text-red-400 text-xs lg:text-sm">- GK Elite Info.</p></div>
+                  <p className='text-md mt-2 text-white lg:mt-4'>I am responsible for designing, developing, and maintaining full-stack
+                    applications using JavaScript technologies, ensuring responsive user interfaces,
+                    robust backend services, and seamless integration for delivering efficient,
+                    scalable, and high-performing web solutions.
+                  </p>
                 </div>
               </div>
               {/* Experience Cards ends */}
