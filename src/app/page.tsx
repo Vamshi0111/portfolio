@@ -2,7 +2,7 @@
 import { FaLinkedinIn, FaWhatsapp, FaCaretRight, FaReact, FaFigma, FaAws, FaArrowUp, FaSkype, FaInstagram, FaFacebook } from "react-icons/fa6";
 import { FaCaretUp, FaGithub } from "react-icons/fa";
 import { DiNodejs } from "react-icons/di";
-import { RiTailwindCssFill, RiJavascriptFill, RiNextjsFill } from "react-icons/ri";
+import { RiTailwindCssFill, RiJavascriptFill } from "react-icons/ri";
 import { SiPostgresql, SiMui, SiMongodb } from "react-icons/si";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
@@ -99,10 +99,10 @@ function Page() {
     }
 
     emailjs.sendForm(
-      "service_pbt0rw5",      // This is Actual EmailJS Service ID
-      "template_tmnippn",     // This is Actual EmailJS Template ID
+      "service_pbt0rw5",
+      "template_tmnippn",
       e.target as HTMLFormElement,
-      "xb4SnK8NoDXUuofIT"       // This is Actual EmailJS Public Key
+      "xb4SnK8NoDXUuofIT"
     )
       .then((result) => {
         console.log("Email sent:", result.text);
