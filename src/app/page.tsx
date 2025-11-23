@@ -13,22 +13,26 @@ import emailjs from "emailjs-com";
 import Link from 'next/link';
 import { LiaCopyrightSolid } from 'react-icons/lia';
 import { TbBrandNextjs } from "react-icons/tb";
+import { BiLogoTypescript } from "react-icons/bi";
+import { IoLogoVercel } from "react-icons/io5";
 
 const skillCards = [
-  { icon: <FaReact className='text-3xl sm:text-9xl lg:text-9xl' />, name: 'React.js' },
   { icon: <TbBrandNextjs className='text-3xl sm:text-9xl lg:text-9xl' />, name: 'Next.js' },
-  { icon: <DiNodejs className='text-3xl sm:text-9xl lg:text-9xl' />, name: 'Node.js' },
+  { icon: <FaReact className='text-3xl sm:text-9xl lg:text-9xl' />, name: 'React.js' },
   { icon: <RiTailwindCssFill className='text-3xl sm:text-9xl lg:text-9xl' />, name: 'Tailwind CSS' },
-  { icon: <SiPostgresql className='text-3xl sm:text-9xl lg:text-9xl' />, name: 'PostgreSQL' },
   { icon: <SiMui className='text-3xl sm:text-9xl lg:text-9xl' />, name: 'MUI' },
+  { icon: <DiNodejs className='text-3xl sm:text-9xl lg:text-9xl' />, name: 'Node.js' },
+  { icon: <SiPostgresql className='text-3xl sm:text-9xl lg:text-9xl' />, name: 'PostgreSQL' },
+  { icon: <SiMongodb className='text-3xl sm:text-9xl lg:text-9xl' />, name: 'MongoDB' },
   { icon: <FaGithub className='text-3xl sm:text-9xl lg:text-9xl' />, name: 'GitHub' },
   { icon: <RiJavascriptFill className='text-3xl sm:text-9xl lg:text-9xl' />, name: 'JavaScript' },
-  { icon: <FaFigma className='text-3xl sm:text-9xl lg:text-9xl' />, name: 'Figma' },
+  { icon: <BiLogoTypescript className='text-3xl sm:text-9xl lg:text-9xl' />, name: 'Typescript' },
   { icon: <FaAws className='text-3xl sm:text-9xl lg:text-9xl' />, name: 'AWS' },
-  { icon: <SiMongodb className='text-3xl sm:text-9xl lg:text-9xl' />, name: 'MongoDB' },
+  { icon: <IoLogoVercel className='text-3xl sm:text-9xl lg:text-9xl' />, name: 'Vercel' },
+  { icon: <FaFigma className='text-3xl sm:text-9xl lg:text-9xl' />, name: 'Figma' },
 ];
 
-function Page() {
+export default function Page() {
 
   const [showButton, setShowButton] = useState(false);
   const [textIndex, setTextIndex] = useState(0);
@@ -198,55 +202,7 @@ function Page() {
               <h4 className='lg:font-semibold lg:text-2xl font-bold text-sm text-[#6899E0]'>My Last</h4>
               <h2 className='text-white sm:text-lg font-bold lg:font-semibold lg:text-4xl lg:mt-3'>Projects</h2>
             </div>
-            {/* Gen card */}
-            <div className='flex flex-col items-start overflow-y-auto lg:overflow-hidden sm:flex p-3 sm:px-4 sm:px-2 lg:flex lg:flex-row lg:items-center w-[100%] h-[300px] lg:w-[93%] lg:gap-10 mt-5 sm:mt-5 lg:mt-10 bg-rose-00 lg:mr-44 lg:h-[200px] rounded-[20px] sm:rounded-[20px] lg:rounded-[20px] lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
-              <div className='lg:w-[25%] w-full bg-yellow-00 flex justify-start lg:items-center lg:justify-center'>
-                <img src={`${IMAGE_BASE_PATH}/Gen.png`} alt="gen" className='rounded-[20px] h-[100px] lg:h-[200px]' />
-              </div>
-              <div className={`bg-green-00 lg:h-[80%] lg:w-[65%]`}>
-                <div className='flex items-center justify-between'>
-                  <h1 className='font-bold text-2xl text-[#6899E0]'>Genamplify Solutions Hub Pvt Ltd.</h1>
-                  <a href="https://genamplifysol.com/"
-                    target='_blank'
-                    rel="noopener noreferrer"
-                  >
-                    <div className='w-[55px] h-[27px] text-white sm:w-[65px] sm:h-[33px] pl-1 lg:mt-0 sm:mt-0 lg:w-[85px] lg:h-[35px] border rounded-full flex items-center justify-around sm:pl-2 sm:pr-1 lg:pl-3 lg:pr-3 hover:bg-red-400 hover:-translate-y-1 transition-transform duration-200'>
-                      <p className="text-sm lg:text-lg">Visit</p>
-                      <FaCaretRight />
-                    </div>
-                  </a>
-                </div>
-                <p className='mt-2 text-white lg:mt-3'>We are a passionate team of tech experts focused on turning your ideas into reality.
-                  From websites and powerful apps to strategic digital marketing, we deliver impactful solutions.
-                  We value strong partnerships and collaborate closely to understand your goals.
-                  Let us help you succeed in today’s fast-changing IT landscape with tailored, high-quality results.
-                </p>
-              </div>
-            </div>
-            {/* Gen card */}
-            {/* Devrootz card */}
-            <div className='flex flex-col items-start overflow-y-auto lg:overflow-hidden sm:flex p-3 sm:px-4 lg:flex lg:flex-row lg:items-center w-[100%] h-[300px] lg:w-[93%] lg:gap-10 mt-5 sm:mt-5 lg:mt-10 bg-rose-00 lg:mr-44 lg:h-[200px] rounded-[20px] sm:rounded-[20px] lg:rounded-[20px] pt-3 lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
-              <div className='lg:w-[25%] w-full bg-yellow-00 flex justify-start lg:items-center lg:justify-center'>
-                <img src={`${IMAGE_BASE_PATH}/DevRootz.png`} alt="devrootz" className='h-[50px] lg:h-auto' />
-              </div>
-              <div className={`bg-green-00 lg:h-[80%] lg:w-[65%]`}>
-                <div className='flex mt-2 sm:mt-5 lg:mt-0 items-center justify-between'>
-                  <h1 className='font-bold text-2xl text-[#6899E0]'>DevRootz Hub.</h1>
-                  <a href="https://devrootz.com/"
-                    target='_blank'
-                    rel="noopener noreferrer"
-                  >
-                    <div className='w-[55px] h-[27px] text-white sm:w-[65px] sm:h-[33px] pl-1 lg:mt-0 sm:mt-0 lg:w-[85px] lg:h-[35px] border rounded-full flex items-center justify-around sm:pl-2 sm:pr-1 lg:pl-3 lg:pr-3 hover:bg-red-400 hover:-translate-y-1 transition-transform duration-200'>
-                      <p className="text-sm lg:text-lg">Visit</p>
-                      <FaCaretRight />
-                    </div>
-                  </a>
-                </div>
-                <p className='mt-2 text-white lg:mt-3'>Devrootz Hub equips you with cutting-edge tech skills and bridges the gap between learning and employment. Our expert-led training programs focus on the most in-demand technologies, ensuring you&apos;re job-ready. With hands-on learning and personalized placement support, we empower you to succeed in the competitive tech industry and land your dream role confidently.
-                </p>
-              </div>
-            </div>
-            {/* Devrootz card */}
+
             {/* S4 Tech card */}
             <div className='flex flex-col items-start overflow-y-auto lg:overflow-hidden sm:flex p-3 sm:px-4 lg:flex lg:flex-row lg:items-center w-[100%] h-[300px] lg:w-[93%] lg:gap-10 mt-5 sm:mt-5 lg:mt-10 bg-rose-00 lg:mr-44 lg:h-[200px] rounded-[20px] sm:rounded-[20px] lg:rounded-[20px] pt-3 lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
               <div className='lg:w-[25%] w-full bg-yellow-00 flex justify-start lg:items-center lg:justify-center'>
@@ -271,24 +227,75 @@ function Page() {
                 </p>
               </div>
             </div>
+            {/* S4 Tech card */}
+
+            {/* Weather App */}
+            <div className='flex flex-col items-start overflow-y-auto lg:overflow-hidden sm:flex p-3 sm:px-4 lg:flex lg:flex-row lg:items-center w-[100%] h-[300px] lg:w-[93%] lg:gap-10 mt-3 sm:mt-5 lg:mt-10 bg-rose-00 lg:mr-44 lg:h-[200px] rounded-[20px] sm:rounded-[20px] lg:rounded-[20px] pt-3 lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
+              <div className='lg:w-[25%] w-full bg-yellow-00 flex justify-start lg:items-center lg:justify-center'>
+                <img src={`${IMAGE_BASE_PATH}/cloud.png`} alt="cloudimage" className='h-[50px] sm:h-[80px] lg:h-[150px]' />
+              </div>
+              <div className={`bg-green-00 lg:h-[80%] lg:w-[65%]`}>
+                <div className='flex mt-2 sm:mt-5 lg:mt-0 items-center justify-between'>
+                  <h1 className='font-bold text-2xl text-[#6899E0]'>WeatherApp.</h1>
+                  <a href="https://vamshi0111.github.io/weatherapp/"
+                    target='_blank'
+                    rel="noopener noreferrer"
+                  >
+                    <div className='w-[55px] h-[27px] text-white sm:w-[65px] sm:h-[33px] pl-1 lg:mt-0 sm:mt-0 lg:w-[85px] lg:h-[35px] border rounded-full flex items-center justify-around sm:pl-2 sm:pr-1 lg:pl-3 lg:pr-3 hover:bg-red-400 hover:-translate-y-1 transition-transform duration-200'>
+                      <p className="text-sm lg:text-lg">Visit</p>
+                      <FaCaretRight />
+                    </div>
+                  </a>
+                </div>
+                <p className='mt-2 text-white lg:mt-3'>This weather application is built using Next.js and Tailwind CSS to provide real-time weather updates based on the user&apos;s current location. It uses geolocation to fetch coordinates and displays temperature, humidity and more through a clean, responsive UI. The app showcases strong API integration, modern frontend development, and a seamless user experience across devices.
+                </p>
+              </div>
+            </div>
+            {/* weatherapp */}
+
+
+            {/* Devrootz card */}
+            <div className='flex flex-col items-start overflow-y-auto lg:overflow-hidden sm:flex p-3 sm:px-4 lg:flex lg:flex-row lg:items-center w-[100%] h-[300px] lg:w-[93%] lg:gap-10 mt-5 sm:mt-5 lg:mt-10 bg-rose-00 lg:mr-44 lg:h-[200px] rounded-[20px] sm:rounded-[20px] lg:rounded-[20px] pt-3 lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
+              <div className='lg:w-[25%] w-full bg-yellow-00 flex justify-start lg:items-center lg:justify-center'>
+                <img src={`${IMAGE_BASE_PATH}/DevRootz.png`} alt="devrootz" className='h-[50px] lg:h-auto' />
+              </div>
+              <div className={`bg-green-00 lg:h-[80%] lg:w-[65%]`}>
+                <div className='flex mt-2 sm:mt-5 lg:mt-0 items-center justify-between'>
+                  <h1 className='font-bold text-2xl text-[#6899E0]'>DevRootz Hub.</h1>
+                  <a href="https://devrootz.com/"
+                    target='_blank'
+                    rel="noopener noreferrer"
+                  >
+                    <div className='w-[55px] h-[27px] text-white sm:w-[65px] sm:h-[33px] pl-1 lg:mt-0 sm:mt-0 lg:w-[85px] lg:h-[35px] border rounded-full flex items-center justify-around sm:pl-2 sm:pr-1 lg:pl-3 lg:pr-3 hover:bg-red-400 hover:-translate-y-1 transition-transform duration-200'>
+                      <p className="text-sm lg:text-lg">Visit</p>
+                      <FaCaretRight />
+                    </div>
+                  </a>
+                </div>
+                <p className='mt-2 text-white lg:mt-3'>Devrootz Hub equips you with cutting-edge tech skills and bridges the gap between learning and employment. Our expert-led training programs focus on the most in-demand technologies, ensuring you&apos;re job-ready. With hands-on learning and personalized placement support, we empower you to succeed in the competitive tech industry and land your dream role confidently.
+                </p>
+              </div>
+            </div>
             <div className="bg-red-00 lg:w-[93%] lg:mt-2 flex justify-end items-center lg:gap-1 gap-1 mt-2 sm:gap-1 sm:mt-3" onClick={() => setShow(!show)}>
               <button className={`bg-green-00 lg:w-20 lg:text-lg font-regular cursor-pointer transition-all duration-200 ease-in-out`}>
                 {show ? 'ShowLess' : 'ShowMore'}
               </button>
               {show ? <FaCaretUp className="transform duration-500 rotate-0" /> : <FaCaretUp className="transform duration-500 rotate-180" />}
             </div>
-            {/* S4 Tech card */}
-            {/* weatherapp */}
+            {/* Devrootz card */}
+
             <div className={`transition-all duration-500 ease-in-out overflow-hidden ${show ? 'max-h-[3000px] opacity-100' : 'max-h-0 opacity-0'
               }`}>
-              <div className='flex flex-col items-start overflow-y-auto lg:overflow-hidden sm:flex p-3 sm:px-4 lg:flex lg:flex-row lg:items-center w-[100%] h-[300px] lg:w-[93%] lg:gap-10 mt-3 sm:mt-5 lg:mt-10 bg-rose-00 lg:mr-44 lg:h-[200px] rounded-[20px] sm:rounded-[20px] lg:rounded-[20px] pt-3 lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
+
+              {/* Gen card */}
+              <div className='flex flex-col items-start overflow-y-auto lg:overflow-hidden sm:flex p-3 sm:px-4 sm:px-2 lg:flex lg:flex-row lg:items-center w-[100%] h-[300px] lg:w-[93%] lg:gap-10 mt-5 sm:mt-5 lg:mt-10 bg-rose-00 lg:mr-44 lg:h-[200px] rounded-[20px] sm:rounded-[20px] lg:rounded-[20px] lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
                 <div className='lg:w-[25%] w-full bg-yellow-00 flex justify-start lg:items-center lg:justify-center'>
-                  <img src={`${IMAGE_BASE_PATH}/cloud.png`} alt="cloudimage" className='h-[50px] sm:h-[80px] lg:h-[150px]' />
+                  <img src={`${IMAGE_BASE_PATH}/Gen.png`} alt="gen" className='rounded-[20px] h-[100px] lg:h-[200px]' />
                 </div>
                 <div className={`bg-green-00 lg:h-[80%] lg:w-[65%]`}>
-                  <div className='flex mt-2 sm:mt-5 lg:mt-0 items-center justify-between'>
-                    <h1 className='font-bold text-2xl text-[#6899E0]'>WeatherApp.</h1>
-                    <a href="https://vamshi0111.github.io/weatherapp/"
+                  <div className='flex items-center justify-between'>
+                    <h1 className='font-bold text-2xl text-[#6899E0]'>Genamplify Solutions Hub Pvt Ltd.</h1>
+                    <a href="https://genamplifysol.com/"
                       target='_blank'
                       rel="noopener noreferrer"
                     >
@@ -298,11 +305,16 @@ function Page() {
                       </div>
                     </a>
                   </div>
-                  <p className='mt-2 text-white lg:mt-3'>This weather application is built using Next.js and Tailwind CSS to provide real-time weather updates based on the user&apos;s current location. It uses geolocation to fetch coordinates and displays temperature, humidity and more through a clean, responsive UI. The app showcases strong API integration, modern frontend development, and a seamless user experience across devices.
+                  <p className='mt-2 text-white lg:mt-3'>We are a passionate team of tech experts focused on turning your ideas into reality.
+                    From websites and powerful apps to strategic digital marketing, we deliver impactful solutions.
+                    We value strong partnerships and collaborate closely to understand your goals.
+                    Let us help you succeed in today’s fast-changing IT landscape with tailored, high-quality results.
                   </p>
                 </div>
               </div>
-              {/* weatherapp */}
+              {/* Gen card */}
+
+
               {/* Messenger card */}
               <div className='flex flex-col items-start overflow-y-auto lg:overflow-hidden sm:flex p-3 sm:px-4 lg:flex lg:flex-row lg:items-center w-[100%] h-[300px] lg:w-[93%] lg:gap-10 mt-5 sm:mt-5 lg:mt-10 bg-rose-00 lg:mr-44 lg:h-[200px] rounded-[20px] sm:rounded-[20px] lg:rounded-[20px] pt-3 lg:p-3 lg:pl-5 bg-[#16193A] border border-[#5E77B1] transition-transform hover:-translate-y-2 duration-200'>
                 <div className='lg:w-[25%] w-full bg-yellow-00 flex justify-start lg:items-center lg:justify-center'>
@@ -527,5 +539,3 @@ function Page() {
     </div>
   )
 }
-
-export default Page;
