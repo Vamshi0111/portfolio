@@ -10,6 +10,7 @@ import Experience from "@/components/experience";
 import Skills from "@/components/skills";
 import StaticProjects from "@/components/staticCards";
 import ProjectCards from "@/components/projectCard";
+import Link from "next/link";
 
 export default function Page() {
 
@@ -31,13 +32,6 @@ export default function Page() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
 
   useEffect(() => {
     if (subIndex === texts[textIndex].length + 1 && forward) {
@@ -145,12 +139,13 @@ export default function Page() {
     <div style={{ backgroundColor: '#0E1123' }} className={`flex h-auto w-full flex-col `}>
 
       {showButton && (
-        <div
-          onClick={scrollToTop}
-          className="fixed z-50 h-10 w-10 bottom-6 right-6 sm:h-[60px] sm:w-[60px] sm:bottom-6 sm:right-6 lg:bottom-6 lg:right-6 lg:z-50 flex items-center justify-center lg:h-[40px] lg:w-[40px] rounded-full bg-red-400 hover:bg-[#5E7CB2] text-white shadow-lg transition-transform duration-300 hover:-translate-y-1 cursor-pointer"
-        >
-          <FaArrowUp className="sm:h-20 lg:h-auto" />
-        </div>
+        <Link href="#">
+          <div
+            className="fixed z-50 h-10 w-10 bottom-6 right-6 sm:h-[60px] sm:w-[60px] sm:bottom-6 sm:right-6 lg:bottom-6 lg:right-6 lg:z-50 flex items-center justify-center lg:h-[40px] lg:w-[40px] rounded-full bg-red-400 hover:bg-[#5E7CB2] text-white shadow-lg transition-transform duration-300 hover:-translate-y-1 cursor-pointer"
+          >
+            <FaArrowUp className="sm:h-20 lg:h-auto" />
+          </div>
+        </Link>
       )}
 
       <Header />
