@@ -98,41 +98,69 @@ export default function Page() {
     }
   ]
 
-  const staticProjProps = [
+  const projectProps = [
     {
-      img: "Messenger.png",
-      title: "MessengerApp.",
-      description: "MessengerApp is a real-time cross-platform messaging application developed using React for web and React Native for mobile. Key features include instant messaging, media sharing, and secure user authentication. I served as the Team Leader, managing coordination, ensuring smooth progress, and guiding development. I also contributed hands- on by building major UI screens for both platforms."
+      img: "tektonCampusLogo.png",
+      title: "Tekton Campus.",
+      imgHeight: "[150px]",
+      link: "https://tektoncampus.com/landing_page",
+      description: "Tekton Campus is an AI-powered campus management ERP that streamlines academic and administrative operations. It offers role-based portals for students, faculty, parents, finance, HR, placements, wellbeing, and administrators, enabling attendance, communication, fee management, announcements, reports, and real-time collaboration through a secure, user-friendly mobile platform."
     },
     {
-      img: "ShipEase.png",
-      title: "ShipEase.",
-      description: "ShipEase is a transport logistics app built with React (web) and React Native (mobile). It features vehicle selection, booking, real- time tracking, and fare estimation. As Team Leader, I coordinated development, managed workflow, and ensured timely delivery. I also contributed directly by developing major user interfaces for both web and mobile platforms."
-    }
+      img: "gkLogo.png",
+      title: "GK Elite-Info.",
+      imgHeight: "[150px]",
+      link: "https://www.gkeliteinfo.com/",
+      description: "GK Elite-Info offers an all-inclusive software ecosystem that unifies your company processes into a single, powerful platform. By substituting automated digital solutions for fragmented tools, we enable businesses to optimize engineering efficiency, improve security, and easily expand operations for quick market expansion."
+    },
+    {
+      img: "vertixlogo.png",
+      title: "Vertix Tax Solutions.",
+      imgHeight: "[120px]",
+      link: "https://www.vertixtax.com/",
+      description: "At Vertix Tax Solutions, we prepare comprehensive U.S. individual tax returns (Form 1040) employment income, rental income, or investment gains, our team ensures accurate and optimized filing."
+    },
+    // {
+    //   img: "S4.png",
+    //   title: "S4 Tech.",
+    //   imgHeight: "[150px]",
+    //   link: "https://s4tech.io/",
+    //   description: "We are a team of dedicated IT consultants committed to helping businesses grow in the digital era. Our expertise spans modern web development, scalable software solutions, and technology-driven strategies. By aligning technology with business goals, we empower organizations to innovate, streamline operations, and stay ahead in an ever-evolving digital landscape."
+    // },
+    // {
+    //   img: "DevRootz.png",
+    //   title: "DevRootz Hub.",
+    //   imgHeight: "auto",
+    //   link: "https://devrootz.com/",
+    //   description: "Devrootz Hub equips you with cutting-edge tech skills and bridges the gap between learning and employment. Our expert-led training programs focus on the most in-demand technologies, ensuring you&apos;re job-ready. With hands-on learning and personalized placement support, we empower you to succeed in the competitive tech industry and land your dream role confidently."
+    // },
   ]
 
-  const projectProps = [
+  const staticProjProps = [
     {
       img: "S4.png",
       title: "S4 Tech.",
       imgHeight: "[150px]",
-      link: "https://s4tech.io/",
+      siteUrl: "https://s4tech.io/",
       description: "We are a team of dedicated IT consultants committed to helping businesses grow in the digital era. Our expertise spans modern web development, scalable software solutions, and technology-driven strategies. By aligning technology with business goals, we empower organizations to innovate, streamline operations, and stay ahead in an ever-evolving digital landscape."
     },
     {
       img: "cloud.png",
       title: "WeatherApp.",
       imgHeight: "[150px]",
-      link: "https://vamshi0111.github.io/weatherapp/",
+      siteUrl: "https://vamshi0111.github.io/weatherapp/",
       description: "This weather application is built using Next.js and Tailwind CSS to provide real-time weather updates based on the user&apos;s current location. It uses geolocation to fetch coordinates and displays temperature, humidity and more through a clean, responsive UI. The app showcases strong API integration, modern frontend development, and a seamless user experience across devices."
     },
-    {
-      img: "DevRootz.png",
-      title: "DevRootz Hub.",
-      imgHeight: "auto",
-      link: "https://devrootz.com/",
-      description: "Devrootz Hub equips you with cutting-edge tech skills and bridges the gap between learning and employment. Our expert-led training programs focus on the most in-demand technologies, ensuring you&apos;re job-ready. With hands-on learning and personalized placement support, we empower you to succeed in the competitive tech industry and land your dream role confidently."
-    },
+    // {
+    //   img: "Messenger.png",
+    //   title: "MessengerApp.",
+    //   description: "MessengerApp is a real-time cross-platform messaging application developed using React for web and React Native for mobile. Key features include instant messaging, media sharing, and secure user authentication. I served as the Team Leader, managing coordination, ensuring smooth progress, and guiding development. I also contributed hands- on by building major UI screens for both platforms."
+    // },
+    // {
+    //   img: "ShipEase.png",
+    //   title: "ShipEase.",
+    //   description: "ShipEase is a transport logistics app built with React (web) and React Native (mobile). It features vehicle selection, booking, real- time tracking, and fare estimation. As Team Leader, I coordinated development, managed workflow, and ensured timely delivery. I also contributed directly by developing major user interfaces for both web and mobile platforms."
+    // }
   ]
 
   return (
@@ -205,11 +233,11 @@ export default function Page() {
               props={projectProps}
             />
 
-            <div className="bg-red-00 lg:w-[93%] lg:mt-2 flex justify-end items-center lg:gap-1 gap-1 mt-2 sm:gap-1 sm:mt-3" onClick={() => setShow(!show)}>
-              <button className={`bg-green-00 lg:w-20 lg:text-lg font-regular cursor-pointer transition-all duration-200 ease-in-out`}>
+            <div className="bg-red-00 lg:w-[93%] lg:mt-2 flex justify-end items-center lg:gap-1 gap-1 mt-2 sm:gap-1 sm:mt-3">
+              <button className={`bg-green-00 lg:w-20 lg:text-lg font-regular cursor-pointer transition-all duration-200 ease-in-out`} onClick={() => setShow(!show)}>
                 {show ? 'ShowLess' : 'ShowMore'}
               </button>
-              {show ? <FaCaretUp className="transform duration-500 rotate-0" /> : <FaCaretUp className="transform duration-500 rotate-180" />}
+              {show ? <FaCaretUp className="transform duration-300 rotate-0" /> : <FaCaretUp className="transform duration-300 rotate-180" />}
             </div>
 
             <div className={`transition-all duration-500 ease-in-out overflow-hidden ${show ? 'max-h-[3000px] opacity-100' : 'max-h-0 opacity-0'
